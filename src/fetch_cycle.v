@@ -12,7 +12,7 @@ wire [31:0] PC_F, PCF,PCPlus4F, InstrF;
 // Initialize modules
 mux PC_Mux (.i_A(PCPlus4F),.i_B(PCTargetE),.i_sel(PCSrcE),.o_C(PC_F));
 
-Prog_Count PCounter(.clk(clk),.rst(rst),.PC(PC_F),.PC_Nxt(PCF));
+Prog_Count PCounter(.clk(clk),.rst(rst),.PC(PCF),.PC_Nxt(PC_F));
 
 Instruction_memory Imem(.rst(rst),.A(PCF),.RD(InstrF));
 

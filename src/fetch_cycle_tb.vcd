@@ -1,0 +1,240 @@
+$date
+	Thu Jan 18 17:14:53 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module fetch_cycle_tb $end
+$var wire 32 ! PCPlus4D [31:0] $end
+$var wire 32 " PCD [31:0] $end
+$var wire 32 # InstrD [31:0] $end
+$var reg 1 $ PCSrcE $end
+$var reg 32 % PCTargetE [31:0] $end
+$var reg 1 & clk $end
+$var reg 1 ' max_iterations $end
+$var reg 1 ( rst $end
+$scope module dut $end
+$var wire 1 $ PCSrcE $end
+$var wire 32 ) PCTargetE [31:0] $end
+$var wire 1 & clk $end
+$var wire 1 ( rst $end
+$var wire 32 * PC_F [31:0] $end
+$var wire 32 + PCPlus4F [31:0] $end
+$var wire 32 , PCPlus4D [31:0] $end
+$var wire 32 - PCF [31:0] $end
+$var wire 32 . PCD [31:0] $end
+$var wire 32 / InstrF [31:0] $end
+$var wire 32 0 InstrD [31:0] $end
+$var reg 32 1 InstrF_reg [31:0] $end
+$var reg 32 2 PCF_reg [31:0] $end
+$var reg 32 3 PCPlus4F_reg [31:0] $end
+$scope module Imem $end
+$var wire 1 ( rst $end
+$var wire 32 4 RD [31:0] $end
+$var wire 32 5 A [31:0] $end
+$upscope $end
+$scope module PC_Mux $end
+$var wire 32 6 i_B [31:0] $end
+$var wire 1 $ i_sel $end
+$var wire 32 7 o_C [31:0] $end
+$var wire 32 8 i_A [31:0] $end
+$upscope $end
+$scope module PCounter $end
+$var wire 32 9 PC_Nxt [31:0] $end
+$var wire 1 & clk $end
+$var wire 1 ( rst $end
+$var reg 32 : PC [31:0] $end
+$upscope $end
+$scope module adder $end
+$var wire 32 ; a [31:0] $end
+$var wire 32 < b [31:0] $end
+$var wire 32 = c [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+bx =
+b100 <
+bx ;
+bx :
+bx 9
+bx 8
+bx 7
+bx 6
+bx 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 0
+b0 /
+b0 .
+bx -
+b0 ,
+bx +
+bx *
+bx )
+0(
+0'
+1&
+bx %
+x$
+b0 #
+b0 "
+b0 !
+$end
+#50
+0&
+#100
+b100 +
+b100 8
+b100 =
+b0 -
+b0 5
+b0 :
+b0 ;
+1&
+#150
+0&
+#200
+b10100000000001010010011 /
+b10100000000001010010011 4
+b100 *
+b100 7
+b100 9
+b0 %
+b0 )
+b0 6
+0$
+1(
+1&
+#250
+0&
+#300
+b11000101000001110110011 /
+b11000101000001110110011 4
+b1000 *
+b1000 7
+b1000 9
+b100 !
+b100 ,
+b10100000000001010010011 #
+b10100000000001010010011 0
+b1000 +
+b1000 8
+b1000 =
+b100 -
+b100 5
+b100 :
+b100 ;
+b100 3
+b10100000000001010010011 1
+1&
+#350
+0&
+#400
+b10010000000011 /
+b10010000000011 4
+b1100 *
+b1100 7
+b1100 9
+b1000 !
+b1000 ,
+b100 "
+b100 .
+b11000101000001110110011 #
+b11000101000001110110011 0
+b1100 +
+b1100 8
+b1100 =
+b1000 -
+b1000 5
+b1000 :
+b1000 ;
+b1000 3
+b100 2
+b11000101000001110110011 1
+1&
+#450
+0&
+#500
+b100000000010010010011 /
+b100000000010010010011 4
+b10000 *
+b10000 7
+b10000 9
+b1100 !
+b1100 ,
+b1000 "
+b1000 .
+b10010000000011 #
+b10010000000011 0
+b10000 +
+b10000 8
+b10000 =
+b1100 -
+b1100 5
+b1100 :
+b1100 ;
+b1100 3
+b1000 2
+b10010000000011 1
+1&
+#550
+0&
+#600
+b100101000000010100110011 /
+b100101000000010100110011 4
+b10100 *
+b10100 7
+b10100 9
+b10000 !
+b10000 ,
+b1100 "
+b1100 .
+b100000000010010010011 #
+b100000000010010010011 0
+b10100 +
+b10100 8
+b10100 =
+b10000 -
+b10000 5
+b10000 :
+b10000 ;
+b10000 3
+b1100 2
+b100000000010010010011 1
+1&
+#650
+0&
+#700
+bx /
+bx 4
+b11000 *
+b11000 7
+b11000 9
+b10100 !
+b10100 ,
+b10000 "
+b10000 .
+b100101000000010100110011 #
+b100101000000010100110011 0
+b11000 +
+b11000 8
+b11000 =
+b10100 -
+b10100 5
+b10100 :
+b10100 ;
+b10100 3
+b10000 2
+b100101000000010100110011 1
+1&
