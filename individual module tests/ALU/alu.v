@@ -37,7 +37,6 @@ assign Result = mux_2;
 assign Z = &(~Result);
 assign N = Result[31];
 assign C = cout & (~ALUControl[1]);
-
 assign V = (~ALUControl[1]) & (A[31] ^ sum[31]) & (~(A[31] ^ B[31] ^ ALUControl[0]));
 
 endmodule
