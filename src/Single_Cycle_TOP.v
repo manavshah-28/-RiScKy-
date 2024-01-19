@@ -1,5 +1,7 @@
 `include "PC.v"
 `include "instr_mem.v"
+`include "register_file.v"
+`include "extend.v"
 
 module Single_Cycle_TOP(clk,rst);
 
@@ -26,4 +28,6 @@ regsiter_file regfile(.clk(clk),
                       .RD1(),
                       .RD2());
 
+extend extend(.instr(RD_Instr),
+              .ImmExt())
 endmodule
