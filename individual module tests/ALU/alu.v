@@ -29,11 +29,11 @@ assign {cout,sum} = A + mux_1 + ALUControl[0];
 assign slt = {31'b0000000000000000000000000000000,sum[31]};
 
 // cout is concatenated with sum. 
-assign mux_2 = (ALUControl[2:0] == 2'b000) ? sum :
-               (ALUControl[2:0] == 2'b001) ? sum :
-               (ALUControl[2:0] == 2'b010) ? a_and_b : 
-               (ALUControl[2:0] == 2'b011) ? a_or_b : 
-               (ALUControl[2:0] == 2'b101) ? slt : 32'h00000000;
+assign mux_2 = (ALUControl[2:0] == 3'b000) ? sum :
+               (ALUControl[2:0] == 3'b001) ? sum : // this is subtraction
+               (ALUControl[2:0] == 3'b010) ? a_and_b : 
+               (ALUControl[2:0] == 3'b011) ? a_or_b : 
+               (ALUControl[2:0] == 3'b101) ? slt : 32'h00000000;
 
 assign Result = mux_2;
 
