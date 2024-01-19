@@ -65,7 +65,7 @@ data_memory data_memr(.clk(clk),
                       .A(ALUResult),
                       .WD(),
                       .WE(regwrite),
-                      .RD(ReadData))
+                      .RD(ReadData));
 
 PC_Adder adder(.a(PC),
                .b(32'd4),
