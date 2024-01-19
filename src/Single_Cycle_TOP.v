@@ -36,7 +36,7 @@ regsiter_file regfile(.clk(clk),
                       .RD2());
 
 extend extend(.instr(RD_Instr),
-              .ImmExt(ImmExt_top);
+              .ImmExt(ImmExt_top));
 
 ALU alu(.A(RD1_Top),
         .B(ImmExt_top),
