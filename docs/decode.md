@@ -8,6 +8,6 @@
   
 
 ## ALU 
-![Alt text](image.png)
+![Alt text](/images/ALU.png)
 ## design
 ![Alt text](/images/decode.png)
