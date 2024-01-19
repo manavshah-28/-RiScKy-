@@ -5,6 +5,8 @@
 `include "alu.v"
 `include "control_unit_Top.v"
 `include "data_mempry.v"
+`include "PC_adder.v"
+`include "PC.v"
 
 module Single_Cycle_TOP(clk,rst);
 
@@ -16,6 +18,7 @@ wire [31:0]ImmExt_top;
 wire [31:0]ALUResult;
 wire regwrite;
 wire ReadData;
+wire [31:0]PC_Top,PCPlus4;
 Prog_Count PC(.clk(clk),
               .rst(rst),
               .PC(PC_Top),
@@ -63,6 +66,15 @@ data_memory data_memr(.clk(clk),
                       .WD(),
                       .WE(regwrite),
                       .RD(ReadData))
+
+PC_Adder adder(.a(PC),
+               .b(32'd4),
+               .c(PCPlus4));
+
+Prog_Count PC(.clk(clk),
+              .rst(rst),
+              .PC(PC_Top),
+              .PC_Nxt(PCPlus4));
 
 
 endmodule
