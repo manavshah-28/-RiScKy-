@@ -4,7 +4,7 @@
 `include "extend.v"
 `include "alu.v"
 `include "control_unit_Top.v"
-`include "data_mempry.v"
+`include "data_memory.v"
 `include "PC_adder.v"
 `include "PC.v"
 
