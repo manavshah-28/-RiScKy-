@@ -20,6 +20,7 @@ wire[31:0] ALU_in2;
 wire[31:0] ALU_res;
 
 wire Controller_WE;
+wire Controller_ALU;
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),
@@ -45,6 +46,7 @@ Regfile regfile(.clk(clk),
 
 ALU ALU(.A(ALU_in1),
         .B(ALU_in2),
+        .control(Controller_ALU),
         .ALU_result(ALU_res));
 
 Controller controller(.instr(Instr),
@@ -54,6 +56,7 @@ Controller controller(.instr(Instr),
                       .rd(Instr[11:7]),
                       .funct3(Instr[14:12]),
                       .funct7(Instr[31:25]),
-                      .RegWE(Controller_WE));
+                      .RegWE(Controller_WE),
+                      .ALU_control(Controller_ALU));
 
 endmodule

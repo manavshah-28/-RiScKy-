@@ -1,5 +1,5 @@
 $date
-	Sat Jan 20 21:23:11 2024
+	Sat Jan 20 21:41:41 2024
 $end
 $version
 	Icarus Verilog
@@ -17,32 +17,33 @@ $var wire 32 # PC_Top [31:0] $end
 $var wire 32 $ PCP4_Top [31:0] $end
 $var wire 32 % Instr [31:0] $end
 $var wire 1 & Controller_WE $end
-$var wire 32 ' ALU_res [31:0] $end
-$var wire 32 ( ALU_in2 [31:0] $end
-$var wire 32 ) ALU_in1 [31:0] $end
-$var reg 1 * write $end
+$var wire 1 ' Controller_ALU $end
+$var wire 32 ( ALU_res [31:0] $end
+$var wire 32 ) ALU_in2 [31:0] $end
+$var wire 32 * ALU_in1 [31:0] $end
+$var reg 1 + write $end
 $scope module ALU $end
-$var wire 32 + B [31:0] $end
-$var wire 32 , ALU_result [31:0] $end
-$var wire 32 - A [31:0] $end
+$var wire 1 ' control $end
+$var wire 32 , B [31:0] $end
+$var wire 32 - ALU_result [31:0] $end
+$var wire 32 . A [31:0] $end
 $upscope $end
 $scope module Instruction_memory $end
 $var wire 1 " rst $end
-$var wire 32 . RD [31:0] $end
-$var wire 32 / A [31:0] $end
+$var wire 32 / RD [31:0] $end
+$var wire 32 0 A [31:0] $end
 $upscope $end
 $scope module PC $end
 $var wire 1 ! clk $end
 $var wire 1 " rst $end
-$var wire 32 0 PCP4 [31:0] $end
-$var reg 32 1 PC [31:0] $end
+$var wire 32 1 PCP4 [31:0] $end
+$var reg 32 2 PC [31:0] $end
 $upscope $end
 $scope module PC_adder $end
-$var wire 32 2 PC_add [31:0] $end
-$var wire 32 3 PCP4_add [31:0] $end
+$var wire 32 3 PC_add [31:0] $end
+$var wire 32 4 PCP4_add [31:0] $end
 $upscope $end
 $scope module controller $end
-$var wire 1 4 ALU_control $end
 $var wire 3 5 funct3 [2:0] $end
 $var wire 7 6 funct7 [6:0] $end
 $var wire 32 7 instr [31:0] $end
@@ -50,6 +51,7 @@ $var wire 7 8 opcode [6:0] $end
 $var wire 5 9 rd [4:0] $end
 $var wire 5 : rs1 [4:0] $end
 $var wire 5 ; rs2 [4:0] $end
+$var wire 1 ' ALU_control $end
 $var reg 1 & RegWE $end
 $upscope $end
 $scope module regfile $end
@@ -84,20 +86,20 @@ b0 8
 b0 7
 b0 6
 b0 5
-z4
-b100 3
+b100 4
+b0 3
 b0 2
-b0 1
-b100 0
+b100 1
+b0 0
 b0 /
 b0 .
 b0 -
 b0 ,
-b0 +
-1*
+1+
+b0 *
 b0 )
 b0 (
-b0 '
+0'
 1&
 b0 %
 b100 $
@@ -110,11 +112,11 @@ $end
 #100
 1!
 #150
-b1 '
-b1 ,
-b1 ?
 b1 (
-b1 +
+b1 -
+b1 ?
+b1 )
+b1 ,
 b1 @
 b101 9
 b10 ;
@@ -124,110 +126,132 @@ b10 =
 b1 <
 b101 >
 b1000001000001010110011 %
-b1000001000001010110011 .
+b1000001000001010110011 /
 b1000001000001010110011 7
 0!
 1"
 #200
-b11 '
-b11 ,
+b11 (
+b11 -
 b11 ?
-b10 )
-b10 -
+b10 *
+b10 .
 b10 A
 b101 ;
 b11 :
 b101 =
 b11 <
 b10100011000001010110011 %
-b10100011000001010110011 .
+b10100011000001010110011 /
 b10100011000001010110011 7
 b1000 $
-b1000 0
-b1000 3
+b1000 1
+b1000 4
 b100 #
-b100 /
-b100 1
+b100 0
 b100 2
+b100 3
 1!
 #250
 0!
 #300
-b11 )
-b11 -
+b11 *
+b11 .
 b11 A
 b100 :
 b100 <
-b10100100000001010110011 %
-b10100100000001010110011 .
-b10100100000001010110011 7
-b110 '
-b110 ,
+b110 (
+b110 -
 b110 ?
-b11 (
-b11 +
+b10100100000001010110011 %
+b10100100000001010110011 /
+b10100100000001010110011 7
+b11 )
+b11 ,
 b11 @
 b1100 $
-b1100 0
-b1100 3
+b1100 1
+b1100 4
 b1000 #
-b1000 /
-b1000 1
+b1000 0
 b1000 2
+b1000 3
 1!
 #350
 0!
 #400
-bx )
-bx -
-bx A
-bx 6
-bx 5
-bx 9
-bx ;
-bx :
-bx 8
-bx =
-bx <
-bx >
-bx %
-bx .
-bx 7
-bx '
-bx ,
-bx ?
-bx (
-bx +
-bx @
+1'
+b110 *
+b110 .
+b110 A
+b100000 6
+b1 ;
+b101 :
+b1 =
+b101 <
+b1000000000100101000001010110011 %
+b1000000000100101000001010110011 /
+b1000000000100101000001010110011 7
+b110 (
+b110 -
+b110 ?
+b0 )
+b0 ,
+b0 @
 b10000 $
-b10000 0
-b10000 3
+b10000 1
+b10000 4
 b1100 #
-b1100 /
-b1100 1
+b1100 0
 b1100 2
+b1100 3
 1!
 #450
 0!
 #500
+b100 (
+b100 -
+b100 ?
+b10 )
+b10 ,
+b10 @
+b11 ;
+b11 =
+b1000000001100101000001010110011 %
+b1000000001100101000001010110011 /
+b1000000001100101000001010110011 7
 b10100 $
-b10100 0
-b10100 3
+b10100 1
+b10100 4
 b10000 #
-b10000 /
-b10000 1
+b10000 0
 b10000 2
+b10000 3
 1!
 #550
 0!
 #600
+b11 )
+b11 ,
+b11 @
+b100 ;
+b100 =
+b1000000010000101000001010110011 %
+b1000000010000101000001010110011 /
+b1000000010000101000001010110011 7
+b1 (
+b1 -
+b1 ?
+b100 *
+b100 .
+b100 A
 b11000 $
-b11000 0
-b11000 3
+b11000 1
+b11000 4
 b10100 #
-b10100 /
-b10100 1
+b10100 0
 b10100 2
+b10100 3
 1!
 #650
 0!

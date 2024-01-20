@@ -7,8 +7,8 @@ input [2:0] funct3;
 input [6:0] funct7;
 
 output reg RegWE = 1;
-output ALU_control;
+output ALU_control; // made this 2 bits to give subtraction ability
 
-
+assign ALU_control = (instr[30] == 1'b1) ? 1'b1 : 1'b0;
 
 endmodule
