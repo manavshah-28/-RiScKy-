@@ -1,5 +1,5 @@
 $date
-	Sat Jan 20 11:02:41 2024
+	Sat Jan 20 11:16:59 2024
 $end
 $version
 	Icarus Verilog
@@ -121,13 +121,13 @@ $end
 $dumpvars
 b0 c
 b0 b
-bx a
+b0 a
 b0 `
 bz _
 b0 ^
 b0 ]
 b0 \
-bx [
+b0 [
 bz Z
 b0 Y
 b0 X
@@ -181,7 +181,7 @@ b100 )
 b0 (
 b0 '
 b0 &
-bx %
+b0 %
 0$
 z#
 0"
@@ -194,9 +194,6 @@ $end
 #150
 14
 1>
-b0 %
-b0 [
-b0 a
 0?
 b11100 +
 b11100 5
