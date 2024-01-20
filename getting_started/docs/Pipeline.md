@@ -1,1 +1,1 @@
-![Alt text](/images/pipeline.png)
+![Alt text](/getting_started/images/pipeline.png)

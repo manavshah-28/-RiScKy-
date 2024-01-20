@@ -6,7 +6,7 @@ The fetch cycle is combininh 4 modules.
 * adder
   
 
-![Fetch cycle](/images/fetch_cycle.png)
+![Fetch cycle](/getting_started/images/fetch_cycle.png)
 
 ## Simulation result
-![Alt text](/images/fetch_cycle_sim.png)
+![Alt text](/getting_started/images/fetch_cycle_sim.png)

@@ -8,6 +8,6 @@
   
 
 ## ALU 
-![Alt text](/images/ALU.png)
+![Alt text](/getting_started/images/ALU.png)
 ## design
-![Alt text](/images/decode.png)
+![Alt text](/getting_started/images/decode.png)
