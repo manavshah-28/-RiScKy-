@@ -8,7 +8,7 @@ Single_Cycle_TOP single_cycle(.clk(clk),
                  .rst(rst));
 
 always begin
-clkc = ~clk;
+clk = ~clk;
 #50;
 end
 
@@ -24,7 +24,7 @@ initial begin
  #150;
 
  rst = 1'b1;
- $500;
+ #500;
  $finish;
 end
 endmodule

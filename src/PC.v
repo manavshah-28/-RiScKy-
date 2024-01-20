@@ -1,10 +1,9 @@
-module Prog_Count(clk,rst,PC,PC_Nxt);
+module PCounter(clk,rst,PC,PC_Nxt);
 
 input clk,rst;
 input [31:0]PC_Nxt;
 
-output [31:0]PC;
-reg [31:0]PC;
+output reg[31:0]PC;
 
 always @(posedge clk)begin
     if (rst == 1'b0)

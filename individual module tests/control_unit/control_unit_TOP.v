@@ -3,7 +3,7 @@
 
 module Control_unit_top(Op,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,branch,funct3,funct7,ALUControl);
 
-input [6:0]op,funct7;
+input [6:0]Op,funct7;
 input [2:0]funct3;
 
 output RegWrite,ALUSrc,MemWrite,ResultSrc,branch;
@@ -23,7 +23,7 @@ main_decoder main_decoder(.op(Op),
                           .PCSrc());
                         
 ALU_decoder ALU_decoder(.ALUOp(ALUOp),
-                        .op(op),
+                        .op(Op),
                         .funct3(funct3), 
                         .funct7(funct7), 
                         .ALUControl(ALUControl));

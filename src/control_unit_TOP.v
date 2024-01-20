@@ -1,7 +1,7 @@
 `include "ALU_decoder.v"
 `include "main_decoder.v"
 
-module Control_unit_top(Op,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,branch,funct3,funct7,ALUControl);
+module Control_unit_top(op,RegWrite,ImmSrc,ALUSrc,MemWrite,ResultSrc,branch,funct3,funct7,ALUControl);
 
 input [6:0]op,funct7;
 input [2:0]funct3;
@@ -12,7 +12,7 @@ output [2:0]ALUControl;
 
 wire[1:0]ALUOp;
 
-main_decoder main_decoder(.op(Op),
+main_decoder main_decoder(.op(op),
                           .zero(),
                           .RegWrite(RegWrite), 
                           .MemWrite(MemWrite), 

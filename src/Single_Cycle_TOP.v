@@ -6,26 +6,26 @@
 `include "control_unit_Top.v"
 `include "data_memory.v"
 `include "PC_adder.v"
-`include "PC.v"
 
 module Single_Cycle_TOP(clk,rst);
 
 input clk,rst;
-wire [31:0] PC_Top;
+wire [31:0] PC_Topp;
 wire [31:0] RD_Instr;
 wire [31:0]RD1_Top;
 wire [31:0]ImmExt_top;
 wire [31:0]ALUResult;
 wire regwrite;
-wire ReadData;
+wire [31:0]ReadData;
 wire [31:0]PC_Top,PCPlus4;
-Prog_Count PC(.clk(clk),
+wire [2:0]ALUControl_top;
+PCounter PCOUNTER(.clk(clk),
               .rst(rst),
-              .PC(PC_Top),
-              .PC_Nxt());
+              .PC(PC_Topp),
+              .PC_Nxt(PCPlus4));
 
 Instruction_memory Instr_mem(.rst(rst),
-                             .A(PC_Top),
+                             .A(PC_Topp),
                              .RD(RD_Instr));
 
 regsiter_file regfile(.clk(clk),
@@ -43,14 +43,14 @@ extend extend(.instr(RD_Instr),
 
 ALU alu(.A(RD1_Top),
         .B(ImmExt_top),
-        .ALUControl(), 
+        .ALUControl(ALUControl_top), 
         .Result(ALUResult),
         .V(),
         .C(),
         .Z(),
         .N());
         
-Control_unit_top control_top(.Op(RD_Instr[6:0]),
+Control_unit_top control_top(.op(RD_Instr[6:0]),
                              .RegWrite(regwrite),
                              .ImmSrc(),
                              .ALUSrc(),
@@ -59,7 +59,7 @@ Control_unit_top control_top(.Op(RD_Instr[6:0]),
                              .branch(),
                              .funct3(RD_Instr[14:12]),
                              .funct7(),
-                             .ALUControl());
+                             .ALUControl(ALUControl_top));
 
 data_memory data_memr(.clk(clk),
                       .A(ALUResult),
@@ -67,14 +67,10 @@ data_memory data_memr(.clk(clk),
                       .WE(regwrite),
                       .RD(ReadData));
 
-PC_Adder adder(.a(PC),
+PC_Adder adder(.a(PC_Topp),
                .b(32'd4),
                .c(PCPlus4));
 
-Prog_Count PC(.clk(clk),
-              .rst(rst),
-              .PC(PC_Top),
-              .PC_Nxt(PCPlus4));
 
 
 endmodule

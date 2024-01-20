@@ -29,4 +29,8 @@ initial begin
  Register[0] = 32'h00000000;
 end
 
+initial begin
+    Register[9] = 32'h00000020;
+end
+
 endmodule
