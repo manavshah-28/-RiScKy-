@@ -6,6 +6,7 @@ module RV32_top(clk,rst);
 
 input clk,rst;
 
+//reg [31:0] instr;
 //wire instantiations
 wire [31:0] PC_Top;
 wire [31:0] PCP4_Top;
@@ -23,5 +24,9 @@ PC_adder PC_adder(.PC_add(PC_Top),
 Instruction_memory Instruction_memory(.rst(rst),
                                       .A(PC_Top),
                                       .RD(Instr));
+
+/*always @(posedge clk)begin
+   instr = Instr;
+end   */          
 
 endmodule
