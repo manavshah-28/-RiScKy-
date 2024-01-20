@@ -5,7 +5,8 @@
 * Top file is completed.
 * Instantiating PC and PC_adder.
 * ![Alt text](image.png)
-
+* Instructions are properly read out of the instructions.hex file.
+* ![Alt text](image-1.png)
 The test code is as follows for the add instruction datapath test.
 
 * Instructions: 
