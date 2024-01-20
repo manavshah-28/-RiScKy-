@@ -13,6 +13,8 @@ wire [31:0] PC_Top;
 wire [31:0] PCP4_Top;
 wire [31:0] Instr;
 
+wire[31:0] ALU_in1;
+wire[31:0] ALU_in2;
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),
@@ -32,9 +34,13 @@ Regfile regfile(.clk(clk),
                 .AddD(Instr[11:7]), // [11:7] = rd 
                 .DataD(),
                 .AddA(Instr[19:15]), // [19:15] = rs1
-                .DataA(),
+                .DataA(ALU_in1),
                 .AddB(Instr[24:20]), // [24:20] = rs2
-                .DataB());
+                .DataB(ALU_in2));
+
+ALU ALU(.A(ALU_in1),
+        .B(ALU_in2),
+        .ALU_result());
 
 
 endmodule
