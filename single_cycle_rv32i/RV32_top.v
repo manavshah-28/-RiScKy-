@@ -3,6 +3,7 @@
 `include "Instruction_memory.v"
 `include "Regfile.v"
 `include "ALU.v"
+`include "Controller.v"
 
 module RV32_top(clk,rst);
 
@@ -17,6 +18,8 @@ wire [31:0] Instr;
 wire[31:0] ALU_in1;
 wire[31:0] ALU_in2;
 wire[31:0] ALU_res;
+
+wire Controller_WE;
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),
@@ -32,7 +35,7 @@ Instruction_memory Instruction_memory(.rst(rst),
 
 Regfile regfile(.clk(clk),
                 .rst(rst),
-                .WE(write),
+                .WE(Controller_WE),
                 .AddD(Instr[11:7]), // [11:7] = rd 
                 .DataD(ALU_res),
                 .AddA(Instr[19:15]), // [19:15] = rs1
@@ -44,5 +47,13 @@ ALU ALU(.A(ALU_in1),
         .B(ALU_in2),
         .ALU_result(ALU_res));
 
+Controller controller(.instr(Instr),
+                      .opcode(Instr[6:0]),
+                      .rs1(Instr[19:15]),
+                      .rs2(Instr[24:20]),
+                      .rd(Instr[11:7]),
+                      .funct3(Instr[14:12]),
+                      .funct7(Instr[31:25]),
+                      .RegWE(Controller_WE));
 
 endmodule

@@ -34,4 +34,6 @@ Inside instructions.hex
 * ![Alt text](image-2.png)
 * After adding WE, this is resolved.
 * ![Alt text](image-3.png)
+* added controller(with decoder functionality embedded directly)
+* ![Alt text](image-4.png)
   
