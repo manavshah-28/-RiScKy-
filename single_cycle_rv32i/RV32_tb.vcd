@@ -1,5 +1,5 @@
 $date
-	Sat Jan 20 20:08:10 2024
+	Sat Jan 20 21:04:17 2024
 $end
 $version
 	Icarus Verilog
@@ -16,20 +16,40 @@ $var wire 1 " rst $end
 $var wire 32 # PC_Top [31:0] $end
 $var wire 32 $ PCP4_Top [31:0] $end
 $var wire 32 % Instr [31:0] $end
+$var wire 32 & ALU_res [31:0] $end
+$var wire 32 ' ALU_in2 [31:0] $end
+$var wire 32 ( ALU_in1 [31:0] $end
+$var reg 1 ) write $end
+$scope module ALU $end
+$var wire 32 * B [31:0] $end
+$var wire 32 + ALU_result [31:0] $end
+$var wire 32 , A [31:0] $end
+$upscope $end
 $scope module Instruction_memory $end
 $var wire 1 " rst $end
-$var wire 32 & RD [31:0] $end
-$var wire 32 ' A [31:0] $end
+$var wire 32 - RD [31:0] $end
+$var wire 32 . A [31:0] $end
 $upscope $end
 $scope module PC $end
 $var wire 1 ! clk $end
 $var wire 1 " rst $end
-$var wire 32 ( PCP4 [31:0] $end
-$var reg 32 ) PC [31:0] $end
+$var wire 32 / PCP4 [31:0] $end
+$var reg 32 0 PC [31:0] $end
 $upscope $end
 $scope module PC_adder $end
-$var wire 32 * PC_add [31:0] $end
-$var wire 32 + PCP4_add [31:0] $end
+$var wire 32 1 PC_add [31:0] $end
+$var wire 32 2 PCP4_add [31:0] $end
+$upscope $end
+$scope module regfile $end
+$var wire 5 3 AddA [4:0] $end
+$var wire 5 4 AddB [4:0] $end
+$var wire 5 5 AddD [4:0] $end
+$var wire 32 6 DataD [31:0] $end
+$var wire 1 ) WE $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 7 DataB [31:0] $end
+$var wire 32 8 DataA [31:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -39,10 +59,23 @@ $dumpall
 $end
 #0
 $dumpvars
-b100 +
+b0 8
+b0 7
+b0 6
+b0 5
+b0 4
+b0 3
+b100 2
+b0 1
+b0 0
+b100 /
+b0 .
+b0 -
+b0 ,
+b0 +
 b0 *
-b0 )
-b100 (
+1)
+b0 (
 b0 '
 b0 &
 b0 %
@@ -56,68 +89,107 @@ $end
 #100
 1!
 #150
+b1 &
+b1 +
+b1 6
+b1 '
+b1 *
+b1 7
+b10 4
+b1 3
+b101 5
 b1000001000001010110011 %
-b1000001000001010110011 &
+b1000001000001010110011 -
 0!
 1"
 #200
+b11 &
+b11 +
+b11 6
+b10 (
+b10 ,
+b10 8
+b101 4
+b11 3
 b10100011000001010110011 %
-b10100011000001010110011 &
+b10100011000001010110011 -
 b1000 $
-b1000 (
-b1000 +
+b1000 /
+b1000 2
 b100 #
-b100 '
-b100 )
-b100 *
+b100 .
+b100 0
+b100 1
 1!
 #250
 0!
 #300
+b11 (
+b11 ,
+b11 8
+b100 3
 b10100100000001010110011 %
-b10100100000001010110011 &
+b10100100000001010110011 -
+b110 &
+b110 +
+b110 6
+b11 '
+b11 *
+b11 7
 b1100 $
-b1100 (
-b1100 +
+b1100 /
+b1100 2
 b1000 #
-b1000 '
-b1000 )
-b1000 *
+b1000 .
+b1000 0
+b1000 1
 1!
 #350
 0!
 #400
+bx (
+bx ,
+bx 8
+bx 4
+bx 3
+bx 5
 bx %
+bx -
 bx &
+bx +
+bx 6
+bx '
+bx *
+bx 7
 b10000 $
-b10000 (
-b10000 +
+b10000 /
+b10000 2
 b1100 #
-b1100 '
-b1100 )
-b1100 *
+b1100 .
+b1100 0
+b1100 1
 1!
 #450
 0!
 #500
 b10100 $
-b10100 (
-b10100 +
+b10100 /
+b10100 2
 b10000 #
-b10000 '
-b10000 )
-b10000 *
+b10000 .
+b10000 0
+b10000 1
 1!
 #550
 0!
 #600
 b11000 $
-b11000 (
-b11000 +
+b11000 /
+b11000 2
 b10100 #
-b10100 '
-b10100 )
-b10100 *
+b10100 .
+b10100 0
+b10100 1
 1!
 #650
 0!

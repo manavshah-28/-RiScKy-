@@ -15,6 +15,11 @@ reg [31:0] xreg [31:0]; //x0 to x31 : RV32 registers
 
 initial begin
     xreg[0] = 32'h00000000;
+    xreg[1] = 32'h00000000;
+    xreg[2] = 32'h00000001;
+    xreg[3] = 32'h00000002;
+    xreg[4] = 32'h00000003;
+    xreg[5] = 32'h00000000;
 end
 
 always @(posedge clk)begin

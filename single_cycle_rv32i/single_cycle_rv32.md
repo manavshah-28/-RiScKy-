@@ -8,6 +8,11 @@
 * Instructions are properly read out of the instructions.hex file.
 * ![Alt text](image-1.png)
 The test code is as follows for the add instruction datapath test.
+* The Add istruction works well, only that Data is not being written into the register, since WE is off.
+* ![Alt text](image-2.png)
+* After adding WE, this is resolved.
+* ![Alt text](image-3.png)
+  
 
 * Instructions: 
 ```
