@@ -1,0 +1,101 @@
+$date
+	Sat Jan 20 18:22:41 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module RV32_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$scope module DUT $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 # PC_Top [31:0] $end
+$var wire 32 $ PCP4_Top [31:0] $end
+$scope module PC $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 % PCP4 [31:0] $end
+$var reg 32 & PC [31:0] $end
+$upscope $end
+$scope module PC_adder $end
+$var wire 32 ' PC_add [31:0] $end
+$var wire 32 ( PCP4_add [31:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b100 (
+b0 '
+b0 &
+b100 %
+b100 $
+b0 #
+0"
+1!
+$end
+#50
+0!
+#100
+1!
+#150
+0!
+1"
+#200
+b1000 $
+b1000 %
+b1000 (
+b100 #
+b100 &
+b100 '
+1!
+#250
+0!
+#300
+b1100 $
+b1100 %
+b1100 (
+b1000 #
+b1000 &
+b1000 '
+1!
+#350
+0!
+#400
+b10000 $
+b10000 %
+b10000 (
+b1100 #
+b1100 &
+b1100 '
+1!
+#450
+0!
+#500
+b10100 $
+b10100 %
+b10100 (
+b10000 #
+b10000 &
+b10000 '
+1!
+#550
+0!
+#600
+b11000 $
+b11000 %
+b11000 (
+b10100 #
+b10100 &
+b10100 '
+1!
+#650
+0!

@@ -1,5 +1,5 @@
 `include "PC.v"
-`include "PC_adder"
+`include "PC_adder.v"
 
 module RV32_top(clk,rst);
 
@@ -14,8 +14,7 @@ PC PC(.clk(clk),
       .PC(PC_Top),
       .PCP4(PCP4_Top));
 
-PC_adder PC_adder(.clk(clk),
-                  .PC_add(PC_Top),
+PC_adder PC_adder(.PC_add(PC_Top),
                   .PCP4_add(PCP4_Top));
 
 
