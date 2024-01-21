@@ -55,14 +55,14 @@ class RegisterGUI:
                 print(f"Invalid value: {value} is not a valid decimal integer")
                 continue
 
-            hex_values.append(hex_value if i == 0 else '00000000')
+            hex_values.append(hex_value)
 
         file_path = filedialog.asksaveasfilename(defaultextension=".hex", filetypes=[("Hex Files", "*.hex")])
 
         if file_path:
             try:
                 with open(file_path, "w") as hex_file:
-                    hex_file.write("\n".join(hex_values))
+                    hex_file.write("\n".join(hex_values) + '\n')  # Ensure a newline at the end
                 print(f"Saved to {file_path}")
             except Exception as e:
                 print(f"Error writing to file: {e}")
