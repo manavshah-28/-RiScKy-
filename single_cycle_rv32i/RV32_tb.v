@@ -26,7 +26,7 @@ initial begin
     #150;
 
     rst = 1'b1;
-    #500;
+    #900;
     $display("End Of Test");
     $finish;
 end
