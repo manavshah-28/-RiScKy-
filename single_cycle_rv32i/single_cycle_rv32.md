@@ -50,4 +50,5 @@ Inside instructions.hex
 * ![Alt text](image-5.png)
 * Now moving on to other R type instructions of RV32I
 * using funct3 to add all those instructions support. Changes will have to be made to ALU and Controller modules.
+* Thats done. R type instructions are now supported on my core(sra left).
   
