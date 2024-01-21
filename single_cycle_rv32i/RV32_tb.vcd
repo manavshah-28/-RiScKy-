@@ -1,5 +1,5 @@
 $date
-	Sat Jan 20 21:41:41 2024
+	Sun Jan 21 15:37:37 2024
 $end
 $version
 	Icarus Verilog
@@ -17,53 +17,54 @@ $var wire 32 # PC_Top [31:0] $end
 $var wire 32 $ PCP4_Top [31:0] $end
 $var wire 32 % Instr [31:0] $end
 $var wire 1 & Controller_WE $end
-$var wire 1 ' Controller_ALU $end
+$var wire 4 ' Controller_ALU [3:0] $end
 $var wire 32 ( ALU_res [31:0] $end
 $var wire 32 ) ALU_in2 [31:0] $end
 $var wire 32 * ALU_in1 [31:0] $end
 $var reg 1 + write $end
 $scope module ALU $end
-$var wire 1 ' control $end
-$var wire 32 , B [31:0] $end
-$var wire 32 - ALU_result [31:0] $end
-$var wire 32 . A [31:0] $end
+$var wire 4 , control [3:0] $end
+$var wire 32 - alu_slt [31:0] $end
+$var wire 32 . B [31:0] $end
+$var wire 32 / ALU_result [31:0] $end
+$var wire 32 0 A [31:0] $end
 $upscope $end
 $scope module Instruction_memory $end
 $var wire 1 " rst $end
-$var wire 32 / RD [31:0] $end
-$var wire 32 0 A [31:0] $end
+$var wire 32 1 RD [31:0] $end
+$var wire 32 2 A [31:0] $end
 $upscope $end
 $scope module PC $end
 $var wire 1 ! clk $end
 $var wire 1 " rst $end
-$var wire 32 1 PCP4 [31:0] $end
-$var reg 32 2 PC [31:0] $end
+$var wire 32 3 PCP4 [31:0] $end
+$var reg 32 4 PC [31:0] $end
 $upscope $end
 $scope module PC_adder $end
-$var wire 32 3 PC_add [31:0] $end
-$var wire 32 4 PCP4_add [31:0] $end
+$var wire 32 5 PC_add [31:0] $end
+$var wire 32 6 PCP4_add [31:0] $end
 $upscope $end
 $scope module controller $end
-$var wire 3 5 funct3 [2:0] $end
-$var wire 7 6 funct7 [6:0] $end
-$var wire 32 7 instr [31:0] $end
-$var wire 7 8 opcode [6:0] $end
-$var wire 5 9 rd [4:0] $end
-$var wire 5 : rs1 [4:0] $end
-$var wire 5 ; rs2 [4:0] $end
-$var wire 1 ' ALU_control $end
+$var wire 3 7 funct3 [2:0] $end
+$var wire 7 8 funct7 [6:0] $end
+$var wire 32 9 instr [31:0] $end
+$var wire 7 : opcode [6:0] $end
+$var wire 5 ; rd [4:0] $end
+$var wire 5 < rs1 [4:0] $end
+$var wire 5 = rs2 [4:0] $end
+$var wire 4 > ALU_control [3:0] $end
 $var reg 1 & RegWE $end
 $upscope $end
 $scope module regfile $end
-$var wire 5 < AddA [4:0] $end
-$var wire 5 = AddB [4:0] $end
-$var wire 5 > AddD [4:0] $end
-$var wire 32 ? DataD [31:0] $end
+$var wire 5 ? AddA [4:0] $end
+$var wire 5 @ AddB [4:0] $end
+$var wire 5 A AddD [4:0] $end
+$var wire 32 B DataD [31:0] $end
 $var wire 1 & WE $end
 $var wire 1 ! clk $end
 $var wire 1 " rst $end
-$var wire 32 @ DataB [31:0] $end
-$var wire 32 A DataA [31:0] $end
+$var wire 32 C DataB [31:0] $end
+$var wire 32 D DataA [31:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -73,6 +74,9 @@ $dumpall
 $end
 #0
 $dumpvars
+b0 D
+b0 C
+b0 B
 b0 A
 b0 @
 b0 ?
@@ -84,12 +88,12 @@ b0 :
 b0 9
 b0 8
 b0 7
-b0 6
+b100 6
 b0 5
-b100 4
-b0 3
+b0 4
+b100 3
 b0 2
-b100 1
+b0 1
 b0 0
 b0 /
 b0 .
@@ -99,7 +103,7 @@ b0 ,
 b0 *
 b0 )
 b0 (
-0'
+b0 '
 1&
 b0 %
 b100 $
@@ -112,146 +116,136 @@ $end
 #100
 1!
 #150
-b1 (
-b1 -
-b1 ?
-b1 )
-b1 ,
-b1 @
-b101 9
-b10 ;
-b1 :
-b110011 8
-b10 =
-b1 <
-b101 >
-b1000001000001010110011 %
-b1000001000001010110011 /
-b1000001000001010110011 7
+b1 ;
+b100 =
+b11 <
+b110011 :
+b100 @
+b11 ?
+b1 A
+b10000011000000010110011 %
+b10000011000000010110011 1
+b10000011000000010110011 9
 0!
 1"
 #200
-b11 (
-b11 -
-b11 ?
-b10 *
-b10 .
+b1 '
+b1 ,
+b1 >
+b100000 8
+b10 ;
+b110 =
+b101 <
+b110 @
+b101 ?
 b10 A
-b101 ;
-b11 :
-b101 =
-b11 <
-b10100011000001010110011 %
-b10100011000001010110011 /
-b10100011000001010110011 7
+b1000000011000101000000100110011 %
+b1000000011000101000000100110011 1
+b1000000011000101000000100110011 9
 b1000 $
-b1000 1
-b1000 4
+b1000 3
+b1000 6
 b100 #
-b100 0
 b100 2
-b100 3
+b100 4
+b100 5
 1!
 #250
 0!
 #300
-b11 *
-b11 .
-b11 A
-b100 :
-b100 <
-b110 (
-b110 -
-b110 ?
-b10100100000001010110011 %
-b10100100000001010110011 /
-b10100100000001010110011 7
-b11 )
-b11 ,
-b11 @
+b10 '
+b10 ,
+b10 >
+b0 8
+b1 7
+b111 ;
+b1001 =
+b1000 <
+b1001 @
+b1000 ?
+b111 A
+b100101000001001110110011 %
+b100101000001001110110011 1
+b100101000001001110110011 9
 b1100 $
-b1100 1
-b1100 4
+b1100 3
+b1100 6
 b1000 #
-b1000 0
 b1000 2
-b1000 3
+b1000 4
+b1000 5
 1!
 #350
 0!
 #400
-1'
-b110 *
-b110 .
-b110 A
-b100000 6
-b1 ;
-b101 :
-b1 =
-b101 <
-b1000000000100101000001010110011 %
-b1000000000100101000001010110011 /
-b1000000000100101000001010110011 7
-b110 (
-b110 -
-b110 ?
-b0 )
-b0 ,
-b0 @
+b11 '
+b11 ,
+b11 >
+b10 7
+b1010 ;
+b1100 =
+b1011 <
+b1100 @
+b1011 ?
+b1010 A
+b110001011010010100110011 %
+b110001011010010100110011 1
+b110001011010010100110011 9
 b10000 $
-b10000 1
-b10000 4
+b10000 3
+b10000 6
 b1100 #
-b1100 0
 b1100 2
-b1100 3
+b1100 4
+b1100 5
 1!
 #450
 0!
 #500
-b100 (
-b100 -
-b100 ?
-b10 )
-b10 ,
-b10 @
-b11 ;
-b11 =
-b1000000001100101000001010110011 %
-b1000000001100101000001010110011 /
-b1000000001100101000001010110011 7
+b100 '
+b100 ,
+b100 >
+b11 7
+b1101 ;
+b1111 =
+b1110 <
+b1111 @
+b1110 ?
+b1101 A
+b111101110011011010110011 %
+b111101110011011010110011 1
+b111101110011011010110011 9
 b10100 $
-b10100 1
-b10100 4
+b10100 3
+b10100 6
 b10000 #
-b10000 0
 b10000 2
-b10000 3
+b10000 4
+b10000 5
 1!
 #550
 0!
 #600
-b11 )
-b11 ,
-b11 @
-b100 ;
-b100 =
-b1000000010000101000001010110011 %
-b1000000010000101000001010110011 /
-b1000000010000101000001010110011 7
-b1 (
-b1 -
-b1 ?
-b100 *
-b100 .
-b100 A
+b101 '
+b101 ,
+b101 >
+b100 7
+b10000 ;
+b10010 =
+b10001 <
+b10010 @
+b10001 ?
+b10000 A
+b1001010001100100000110011 %
+b1001010001100100000110011 1
+b1001010001100100000110011 9
 b11000 $
-b11000 1
-b11000 4
+b11000 3
+b11000 6
 b10100 #
-b10100 0
 b10100 2
-b10100 3
+b10100 4
+b10100 5
 1!
 #650
 0!

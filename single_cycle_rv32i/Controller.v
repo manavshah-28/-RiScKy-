@@ -7,8 +7,18 @@ input [2:0] funct3;
 input [6:0] funct7;
 
 output reg RegWE = 1;
-output ALU_control; // made this 2 bits to give subtraction ability
+output [3:0]ALU_control; // made this 4 bits for R type instructions
 
-assign ALU_control = (instr[30] == 1'b1) ? 1'b1 : 1'b0;
+assign ALU_control = ((funct3 == 3'b000) & (instr[30] == 1'b0) & (opcode == 7'b0110011)) ? 4'b0000 : // add
+                     ((funct3 == 3'b000) & (instr[30] == 1'b1) & (opcode == 7'b0110011)) ? 4'b0001 : // sub
+                     ((funct3 == 3'b001) & (opcode == 7'b0110011)) ? 4'b0010 :                       // sll
+                     ((funct3 == 3'b010) & (opcode == 7'b0110011)) ? 4'b0011 :                       // slt
+                     ((funct3 == 3'b011) & (opcode == 7'b0110011)) ? 4'b0100 :                       // sllu
+                     ((funct3 == 3'b100) & (opcode == 7'b0110011)) ? 4'b0101 :                       // xor
+                     ((funct3 == 3'b101) & (opcode == 7'b0110011) & (instr[30] == 1'b0)) ? 4'b0110 : // srl                     // srl
+                     ((funct3 == 3'b101) & (opcode == 7'b0110011) & (instr[30] == 1'b1)) ? 4'b0111 : // sra                     // sll
+                     ((funct3 == 3'b110) & (opcode == 7'b0110011)) ? 4'b1000 :                       // sll
+                     ((funct3 == 3'b111) & (opcode == 7'b0110011)) ? 4'b1001 :                       // sll
+                     4'b0000;
 
 endmodule

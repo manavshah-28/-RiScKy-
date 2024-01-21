@@ -20,7 +20,8 @@ wire[31:0] ALU_in2;
 wire[31:0] ALU_res;
 
 wire Controller_WE;
-wire Controller_ALU;
+wire [3:0]Controller_ALU; //made 4 bits for R type instructions
+
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),

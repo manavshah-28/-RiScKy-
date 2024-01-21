@@ -48,4 +48,6 @@ Inside instructions.hex
 |0x14 |	0x404282B3    |	sub x5 x5 x4    |	sub x5,x5,x4  |
 
 * ![Alt text](image-5.png)
+* Now moving on to other R type instructions of RV32I
+* using funct3 to add all those instructions support. Changes will have to be made to ALU and Controller modules.
   
