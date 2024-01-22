@@ -83,3 +83,19 @@ PC	  Machine Code	Basic Code	     Original Code
 0x14  0x00A52113	slti x2 x10 10	 slti x2,x10, 10
 ```
 * ![Alt text](image-7.png)
+  
+## andi and ori
+```
+PC	Machine Code	Basic Code	    Original Code
+0x0	0x003172B3	    and x5 x2 x3	and x5,x2,x3
+0x4	0x00316333	    or x6 x2 x3	or  x6,x2,x3
+0x8	0x00A17293	    andi x5 x2 10	andi x5,x2,10
+0xc	0x00A16313	    ori x6 x2 10	ori x6,x2,10
+```
+```
+Register configuration:
+
+x2 = 2
+x3 = 3
+```
+* ![Alt text](image-8.png)
