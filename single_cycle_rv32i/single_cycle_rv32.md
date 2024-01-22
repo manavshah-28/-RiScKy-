@@ -52,3 +52,19 @@ Inside instructions.hex
 * using funct3 to add all those instructions support. Changes will have to be made to ALU and Controller modules.
 * Thats done. R type instructions are now supported on my core(sra left).
   
+## Immediate datapath testing
+The program executed:
+```
+PC	Machine Code	Basic Code	      Original Code
+0x0	0x00310533	    add x10 x2 x3	  add x10, x2 ,x3
+0x4	0x40250533	    sub x10 x10 x2	  sub x10, x10 ,x2
+0x8	0x00A50513	    addi x10 x10 10	  addi x10,x10,+10
+0xc	0xFF650513	    addi x10 x10 -10  addi x10,x10,-10
+
+Register configuration:
+
+x2 = 2
+x3 = 3
+
+```
+![Alt text](image-6.png)

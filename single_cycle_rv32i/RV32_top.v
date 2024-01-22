@@ -65,7 +65,8 @@ Controller controller(.instr(Instr),
                       .funct3(Instr[14:12]),
                       .funct7(Instr[31:25]),
                       .RegWE(Controller_WE),
-                      .ALU_control(Controller_ALU));
+                      .ALU_control(Controller_ALU),
+                      .Imm_mux_SEL(mux_select_top));
 
 immediate_gen immediate_gen(.inst_imm(Instr[31:20]),
                             .imm(immediate));         // going in mux input b
@@ -74,7 +75,6 @@ mux mux(.a(mux_in_a),
         .b(immediate),
         .c(ALU_in2),
         .sel(mux_select_top));
-
 
 
 endmodule
