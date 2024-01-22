@@ -1,0 +1,58 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "D:\iverilog\lib\ivl\system.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "D:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "D:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "D:\iverilog\lib\ivl\va_math.vpi";
+S_00000207a3cf59d0 .scope module, "immediate_tb" "immediate_tb" 2 3;
+ .timescale 0 0;
+v00000207a3e1ba90_0 .net "imm", 31 0, L_00000207a3cf3840;  1 drivers
+v00000207a3e1bb30_0 .var "inst_imm", 11 0;
+S_00000207a3cf5b60 .scope module, "immediate" "immediate_gen" 2 6, 3 1 0, S_00000207a3cf59d0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 12 "inst_imm";
+    .port_info 1 /OUTPUT 32 "imm";
+L_00000207a3d39828 .functor BUFT 1, C4<1>, C4<0>, C4<0>, C4<0>;
+L_00000207a3e196e0 .functor XNOR 1, L_00000207a3cf3e80, L_00000207a3d39828, C4<0>, C4<0>;
+v00000207a3e19640_0 .net *"_ivl_1", 0 0, L_00000207a3cf3e80;  1 drivers
+L_00000207a3d398b8 .functor BUFT 1, C4<00000000000000000000>, C4<0>, C4<0>, C4<0>;
+v00000207a3cc3120_0 .net/2u *"_ivl_10", 19 0, L_00000207a3d398b8;  1 drivers
+v00000207a3cf5cf0_0 .net *"_ivl_12", 31 0, L_00000207a3cf3160;  1 drivers
+v00000207a3cf5d90_0 .net/2u *"_ivl_2", 0 0, L_00000207a3d39828;  1 drivers
+v00000207a3e1b5d0_0 .net *"_ivl_4", 0 0, L_00000207a3e196e0;  1 drivers
+L_00000207a3d39870 .functor BUFT 1, C4<11111111111111111111>, C4<0>, C4<0>, C4<0>;
+v00000207a3e1b670_0 .net/2u *"_ivl_6", 19 0, L_00000207a3d39870;  1 drivers
+v00000207a3e1b8b0_0 .net *"_ivl_8", 31 0, L_00000207a3cf30c0;  1 drivers
+v00000207a3e1b950_0 .net "imm", 31 0, L_00000207a3cf3840;  alias, 1 drivers
+v00000207a3e1b9f0_0 .net "inst_imm", 11 0, v00000207a3e1bb30_0;  1 drivers
+L_00000207a3cf3e80 .part v00000207a3e1bb30_0, 11, 1;
+L_00000207a3cf30c0 .concat [ 12 20 0 0], v00000207a3e1bb30_0, L_00000207a3d39870;
+L_00000207a3cf3160 .concat [ 12 20 0 0], v00000207a3e1bb30_0, L_00000207a3d398b8;
+L_00000207a3cf3840 .functor MUXZ 32, L_00000207a3cf3160, L_00000207a3cf30c0, L_00000207a3e196e0, C4<>;
+    .scope S_00000207a3cf59d0;
+T_0 ;
+    %vpi_call 2 10 "$dumpfile", "immediate_gen_tb.vcd" {0 0 0};
+    %vpi_call 2 11 "$dumpvars", 32'sb00000000000000000000000000000000 {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_00000207a3cf59d0;
+T_1 ;
+    %pushi/vec4 725, 0, 12;
+    %store/vec4 v00000207a3e1bb30_0, 0, 12;
+    %delay 20, 0;
+    %pushi/vec4 2773, 0, 12;
+    %store/vec4 v00000207a3e1bb30_0, 0, 12;
+    %delay 20, 0;
+    %vpi_call 2 22 "$display", "End of Test" {0 0 0};
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "immediate_tb.v";
+    "./immediate_gen.v";
