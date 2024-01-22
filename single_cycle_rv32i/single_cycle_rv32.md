@@ -101,3 +101,22 @@ x3 = 3
 * ![Alt text](image-8.png)
 ## slli
 ![Alt text](image-9.png)
+
+# Test for LW instruction
+```
+PC	Machine Code	Basic Code	    Original Code
+0x0	0x0073A303	    lw x6 7(x7)	    lw x6, 7(x7)
+0x4	0x00030313	    addi x6 x6 0	addi x6,x6,0
+```
+![Alt text](image-10.png)
+
+## explanaition
+```
+lw x6, 7(x7)
+```
+* The instruction wants to read data memory.
+* Address of data memory to read = [data of register x7 + immediate(7 in this case)]. = 3 + 7 = 10;
+* Note: data memory position 7 was loaded with value 3.
+* Now the register x6 is loaded with the value from data memories 10th position. (in this case x10 = 0xE).
+* The addi,x6,x6,0 is used to check value stored in x6, which is correctly found as E.
+* Thus lw is verified.
