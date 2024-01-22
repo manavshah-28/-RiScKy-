@@ -12,6 +12,8 @@ initial begin
     $readmemh("/memory/D_mem.hex",D_mem);
 end
 
+//MemRW = 0 : read , MemRW = 1 : write
+
 always @(posedge clk)begin
 if(MemRW == 1'b1)begin
    D_mem[A_mem] <= DataIP;

@@ -19,6 +19,15 @@ assign ALU_result = (control == 4'b0000) ? A + B :        //0 add
                     (control == 4'b0111) ? A >>> B[4:0] : // sra
                     (control == 4'b1000) ? A | B :        // or
                     (control == 4'b1001) ? A & B :        // and
+                    
+                    //LW
+                    (control == 4'b1010) ?  {{24{1'b0}},A[7:0]} +  B  : // LB load only 8 bits
+                    (control == 4'b1011) ?  {{16{1'b0}},A[15:0]} + B  : // LH              
+                    (control == 4'b1100) ?  A + B                     : // LW
+                    (control == 4'b1101) ?  {{25{1'b0}},A[6:0]} +  B  : // LBU             
+                    (control == 4'b1110) ?  {{17{1'b0}},A[14:0]} + B  : // LHU             
+                     
+                    //default 
                     32'h00000000;
                     
 // SLL, SRL, and SRA perform logical left, logical right, and arithmetic right shifts on the value in 
