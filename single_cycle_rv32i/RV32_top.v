@@ -4,6 +4,8 @@
 `include "Regfile.v"
 `include "ALU.v"
 `include "Controller.v"
+`include "mux.v"
+`include "immediate_gen.v"
 
 module RV32_top(clk,rst);
 
@@ -22,6 +24,11 @@ wire[31:0] ALU_res;
 wire Controller_WE;
 wire [3:0]Controller_ALU; //made 4 bits for R type instructions
 
+wire [31:0]immediate;
+
+wire [31:0]mux_in_a;
+
+wire mux_select_top;
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),
@@ -43,7 +50,7 @@ Regfile regfile(.clk(clk),
                 .AddA(Instr[19:15]), // [19:15] = rs1
                 .DataA(ALU_in1),
                 .AddB(Instr[24:20]), // [24:20] = rs2
-                .DataB(ALU_in2));
+                .DataB(mux_in_a));   // has to go in a input of mux
 
 ALU ALU(.A(ALU_in1),
         .B(ALU_in2),
@@ -59,5 +66,15 @@ Controller controller(.instr(Instr),
                       .funct7(Instr[31:25]),
                       .RegWE(Controller_WE),
                       .ALU_control(Controller_ALU));
+
+immediate_gen immediate_gen(.inst_imm(Instr[31:20]),
+                            .imm(immediate));         // going in mux input b
+                        
+mux mux(.a(mux_in_a),
+        .b(immediate),
+        .c(ALU_in2),
+        .sel(mux_select_top));
+
+
 
 endmodule
