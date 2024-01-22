@@ -120,3 +120,8 @@ lw x6, 7(x7)
 * Now the register x6 is loaded with the value from data memories 10th position. (in this case x10 = 0xE).
 * The addi,x6,x6,0 is used to check value stored in x6, which is correctly found as E.
 * Thus lw is verified.
+* similarly tests for :
+* lh x6, 7(x7) 
+* ![Alt text](image-11.png)
+* lb x6, 7(x7)
+* ![Alt text](image-12.png)
