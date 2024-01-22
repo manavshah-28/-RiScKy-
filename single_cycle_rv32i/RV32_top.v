@@ -6,6 +6,7 @@
 `include "Controller.v"
 `include "mux.v"
 `include "immediate_gen.v"
+`include "Data_mem.v"
 
 module RV32_top(clk,rst);
 
