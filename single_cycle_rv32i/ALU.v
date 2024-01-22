@@ -16,9 +16,9 @@ assign ALU_result = (control == 4'b0000) ? A + B :        //0 add
                     (control == 4'b0100) ? alu_slt :      //4 sltu  set less than unsigned
                     (control == 4'b0101) ? A ^ B :        //5 xor
                     (control == 4'b0110) ? A >> B[4:0] :  // srl
-                    (control == 4'b0111) ? A >>> B[4:0] :  // sra
-                    (control == 4'b1000) ? A | B :  // or
-                    (control == 4'b1001) ? A & B :  // and
+                    (control == 4'b0111) ? A >>> B[4:0] : // sra
+                    (control == 4'b1000) ? A | B :        // or
+                    (control == 4'b1001) ? A & B :        // and
                     32'h00000000;
                     
 // SLL, SRL, and SRA perform logical left, logical right, and arithmetic right shifts on the value in 

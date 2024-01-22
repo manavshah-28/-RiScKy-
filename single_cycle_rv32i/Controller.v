@@ -23,7 +23,9 @@ assign ALU_control = ((funct3 == 3'b000) & (instr[30] == 1'b0) & (opcode == 7'b0
                      ((funct3 == 3'b111) & (opcode == 7'b0110011)) ? 4'b1001 :                       // sll
 
                      // for Immediate functions
-                     ((funct3 == 3'b000) & (opcode == 7'b0010011)) ? 4'b0000 : // addi
+                     ((funct3 == 3'b000) & (opcode == 7'b0010011)) ? 4'b0000 :                       // addi
+                     ((funct3 == 3'b010) & (opcode == 7'b0010011)) ? 4'b0011 :                       // slti
+
                      4'b0000;
 
 /*
