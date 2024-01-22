@@ -1,6 +1,6 @@
-module Data_mem(clk,A_mem,DataIP,MemWE,D_read); //single read write port 
+module Data_mem(clk,A_mem,DataIP,MemRW,D_read); //single read write port 
 input clk;
-input MemWE; //active high
+input MemRW; //active high
 input [31:0] A_mem;  // address to which input data is stored.
 input [31:0] DataIP; // Input Data
 
@@ -13,11 +13,11 @@ initial begin
 end
 
 always @(posedge clk)begin
-if(MemWE == 1'b1)begin
+if(MemRW == 1'b1)begin
    D_mem[A_mem] <= DataIP;
 end
 end
 
-assign D_read = (MemWE == 1'b0) ? D_mem[A_mem] : 32'h00000000;
+assign D_read = (MemRW == 1'b0) ? D_mem[A_mem] : 32'h00000000;
 
 endmodule

@@ -30,6 +30,11 @@ wire [31:0]immediate;
 wire [31:0]mux_in_a;
 
 wire mux_select_top;
+
+wire [31:0]dmem_out; // output from data memory, fed into the mux1
+wire [31:0]writeback;
+wire WBsel; //if 1, data is written to register (it is controlled by the controller)
+
 //module instantiations
 PC PC(.clk(clk),
       .rst(rst),
@@ -47,7 +52,7 @@ Regfile regfile(.clk(clk),
                 .rst(rst),
                 .WE(Controller_WE),
                 .AddD(Instr[11:7]), // [11:7] = rd 
-                .DataD(ALU_res),
+                .DataD(writeback),
                 .AddA(Instr[19:15]), // [19:15] = rs1
                 .DataA(ALU_in1),
                 .AddB(Instr[24:20]), // [24:20] = rs2
@@ -77,5 +82,14 @@ mux mux(.a(mux_in_a),
         .c(ALU_in2),
         .sel(mux_select_top));
 
+Data_mem Data_memory(.clk(clk),
+                     .A_mem(ALU_res),
+                     .DataIP(),
+                     .MemRW(), // controller controlls this. if 0 : read, 1: write
+                     .D_read(dmem_out));
 
+mux mux1(.a(ALU_res),
+         .b(dmem_out),
+         .c(writeback),
+         .sel(WBsel));
 endmodule
