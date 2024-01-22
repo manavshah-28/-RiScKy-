@@ -54,5 +54,5 @@ assign ALU_control = ((funct3 == 3'b000) & (instr[30] == 1'b0) & (opcode == 7'b0
 */
 
 assign MemRW = (opcode == 7'b0000011) ? 1'b0 : 1'b1;
-assign WB_sel = (opcode == 7'b0000011) ? 1'b0 : 1'b1;
+assign WB_sel = (opcode == 7'b0000011) ? 1'b1 : 1'b0; // correction in polarity done. now proper.
 endmodule

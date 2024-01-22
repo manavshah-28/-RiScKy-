@@ -9,7 +9,7 @@ output [31:0] D_read;  // the data from memory is given as output
 reg [31:0] D_mem [1023:0];  // this is the actual memory
 
 initial begin
-    $readmemh("/memory/D_mem.hex",D_mem);
+    $readmemh("D_mem.hex",D_mem,0,1023);
 end
 
 //MemRW = 0 : read , MemRW = 1 : write

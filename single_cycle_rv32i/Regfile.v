@@ -15,7 +15,7 @@ reg [31:0] xreg [31:0]; //x0 to x31 : RV32 registers
 reg [4:0]index = 1;
 
 initial begin
-    $readmemh("reg_load.hex",xreg); // custom program to load registers from gui
+    $readmemh("reg_load.hex",xreg,0,31); // custom program to load registers from gui
 end
 
 always @(posedge clk)begin
