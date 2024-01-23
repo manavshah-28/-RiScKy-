@@ -1,5 +1,5 @@
 $date
-	Tue Jan 23 11:29:38 2024
+	Tue Jan 23 11:36:32 2024
 $end
 $version
 	Icarus Verilog
@@ -73,32 +73,33 @@ $var wire 5 H ALU_control [4:0] $end
 $var reg 1 - RegWE $end
 $upscope $end
 $scope module immediate_gen $end
-$var wire 12 I inst_imm [11:0] $end
-$var wire 32 J imm [31:0] $end
+$var wire 32 I Instr [31:0] $end
+$var wire 12 J inst_imm [11:0] $end
+$var wire 32 K imm [31:0] $end
 $upscope $end
 $scope module mux $end
-$var wire 32 K b [31:0] $end
+$var wire 32 L b [31:0] $end
 $var wire 1 $ sel $end
-$var wire 32 L c [31:0] $end
-$var wire 32 M a [31:0] $end
+$var wire 32 M c [31:0] $end
+$var wire 32 N a [31:0] $end
 $upscope $end
 $scope module mux1 $end
-$var wire 32 N a [31:0] $end
-$var wire 32 O b [31:0] $end
+$var wire 32 O a [31:0] $end
+$var wire 32 P b [31:0] $end
 $var wire 1 ( sel $end
-$var wire 32 P c [31:0] $end
+$var wire 32 Q c [31:0] $end
 $upscope $end
 $scope module regfile $end
-$var wire 5 Q AddA [4:0] $end
-$var wire 5 R AddB [4:0] $end
-$var wire 5 S AddD [4:0] $end
-$var wire 32 T DataD [31:0] $end
+$var wire 5 R AddA [4:0] $end
+$var wire 5 S AddB [4:0] $end
+$var wire 5 T AddD [4:0] $end
+$var wire 32 U DataD [31:0] $end
 $var wire 1 - WE $end
 $var wire 1 ! clk $end
 $var wire 1 " rst $end
-$var wire 32 U DataB [31:0] $end
-$var wire 32 V DataA [31:0] $end
-$var reg 5 W index [4:0] $end
+$var wire 32 V DataB [31:0] $end
+$var wire 32 W DataA [31:0] $end
+$var reg 5 X index [4:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -108,7 +109,8 @@ $dumpall
 $end
 #0
 $dumpvars
-b1 W
+b1 X
+b0 W
 b0 V
 b0 U
 b0 T
@@ -173,86 +175,88 @@ b1110 .
 b1110 3
 b1110 H
 b1110 #
-b1110 P
-b1110 T
+b1110 Q
+b1110 U
 b1110 '
 b1110 :
-b1110 O
+b1110 P
 b1 4
+b111 &
+b111 K
+b111 L
 1$
 b111 0
 b111 5
-b111 L
+b111 M
 b1010 /
 b1010 6
 b1010 8
-b1010 N
-b111 &
+b1010 O
 b111 J
-b111 K
 0)
 1(
 b11 %
 b11 9
-b11 M
-b11 U
+b11 N
+b11 V
 b11 1
 b11 7
-b11 V
-b111 I
+b11 W
 b101 A
 b110 E
 b111 G
 b111 F
 b11 D
+b111 S
 b111 R
-b111 Q
-b110 S
+b110 T
 b11100111101001100000011 ,
 b11100111101001100000011 ;
 b11100111101001100000011 C
+b11100111101001100000011 I
 0!
 1"
 #200
 b1110 /
 b1110 6
 b1110 8
-b1110 N
+b1110 O
 b0 .
 b0 3
 b0 H
-b0 '
-b0 :
-b0 O
-b1110 #
-b1110 P
-b1110 T
 b0 0
 b0 5
+b0 M
+b0 '
+b0 :
+b0 P
+b1110 #
+b1110 Q
+b1110 U
+b0 &
+b0 K
 b0 L
 b0 4
-b0 &
 b0 J
-b0 K
 1)
 0(
 b0 %
 b0 9
-b0 M
-b0 U
+b0 N
+b0 V
 b1110 1
 b1110 7
-b1110 V
-b0 I
+b1110 W
 b0 A
 b0 G
 b110 F
 b10011 D
-b0 R
-b110 Q
+b0 S
+b110 R
 b110000001100010011 ,
 b110000001100010011 ;
 b110000001100010011 C
+b110000001100010011 I
 b1000 +
 b1000 =
 b1000 @
@@ -269,42 +273,43 @@ b1101 3
 b1101 H
 b1110 '
 b1110 :
-b1110 O
-b1 4
-b1110 #
 b1110 P
-b1110 T
+b1 4
 b111 0
 b111 5
+b111 M
+b1110 #
+b1110 Q
+b1110 U
+b111 &
+b111 K
 b111 L
 b1010 /
 b1010 6
 b1010 8
-b1010 N
-b111 &
+b1010 O
 b111 J
-b111 K
 0)
 1(
 b11 %
 b11 9
-b11 M
-b11 U
+b11 N
+b11 V
 b11 1
 b11 7
-b11 V
-b111 I
+b11 W
 b100 A
 b1000 E
 b111 G
 b111 F
 b11 D
+b111 S
 b111 R
-b111 Q
-b1000 S
+b1000 T
 b11100111100010000000011 ,
 b11100111100010000000011 ;
 b11100111100010000000011 C
+b11100111100010000000011 I
 b1100 +
 b1100 =
 b1100 @
@@ -319,42 +324,43 @@ b1000 ?
 b1110 /
 b1110 6
 b1110 8
-b1110 N
+b1110 O
 b0 .
 b0 3
 b0 H
-b0 '
-b0 :
-b0 O
-b1110 #
-b1110 P
-b1110 T
 b0 0
 b0 5
+b0 M
+b0 '
+b0 :
+b0 P
+b1110 #
+b1110 Q
+b1110 U
+b0 &
+b0 K
 b0 L
 b0 4
-b0 &
 b0 J
-b0 K
 1)
 0(
 b0 %
 b0 9
-b0 M
-b0 U
+b0 N
+b0 V
 b1110 1
 b1110 7
-b1110 V
-b0 I
+b1110 W
 b0 A
 b0 G
 b1000 F
 b10011 D
-b0 R
-b1000 Q
+b0 S
+b1000 R
 b1000000010000010011 ,
 b1000000010000010011 ;
 b1000000010000010011 C
+b1000000010000010011 I
 b10000 +
 b10000 =
 b10000 @
@@ -369,46 +375,47 @@ b1100 ?
 bx .
 bx 3
 bx H
-bx '
-bx :
-bx O
-bx #
-bx P
-bx T
 bx 0
 bx 5
+bx M
+bx '
+bx :
+bx P
+bx #
+bx Q
+bx U
+bx &
+bx K
 bx L
 x$
 bx /
 bx 6
 bx 8
-bx N
+bx O
 b0x 4
-bx &
 bx J
-bx K
 x)
 x(
 bx %
 bx 9
-bx M
-bx U
+bx N
+bx V
 bx 1
 bx 7
-bx V
-bx I
+bx W
 bx B
 bx A
 bx E
 bx G
 bx F
 bx D
-bx R
-bx Q
 bx S
+bx R
+bx T
 bx ,
 bx ;
 bx C
+bx I
 b10100 +
 b10100 =
 b10100 @

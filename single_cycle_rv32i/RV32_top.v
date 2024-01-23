@@ -76,7 +76,7 @@ Controller controller(.instr(Instr),
                       .MemRW(RW),
                       .WB_sel(WB_sel));
 
-immediate_gen immediate_gen(.inst_imm(Instr[31:20]),
+immediate_gen immediate_gen(.Instr(Instr),
                             .imm(immediate));         // going in mux input b
                         
 mux mux(.a(mux_in_a),
