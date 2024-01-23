@@ -125,3 +125,12 @@ lw x6, 7(x7)
 * ![Alt text](image-11.png)
 * lb x6, 7(x7)
 * ![Alt text](image-12.png)
+* Test for lbu,lhu
+```	
+PC	Machine Code	Basic Code	    Original Code
+0x0	0x0073D303	    lhu x6 7(x7)	lhu x6, 7(x7)
+0x4	0x00030313	    addi x6 x6 0	addi x6,x6,0
+0x8	0x0073C403	    lbu x8 7(x7)	lbu x8,7(x7)
+0xc	0x00040413	    addi x8 x8 0	addi x8,x8,0
+```
+![Alt text](image-13.png)
