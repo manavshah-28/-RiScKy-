@@ -13,7 +13,7 @@ output Imm_mux_SEL;
 // for Load word 
 output MemRW;
 output WB_sel;
-assign Imm_mux_SEL = (opcode == 7'b0010011 | opcode == 7'b0000011) ? 1'b1 : 1'b0;
+assign Imm_mux_SEL = (opcode == 7'b0010011 | opcode == 7'b0000011 | opcode == 7'b0100011) ? 1'b1 : 1'b0;
 
 assign ALU_control = ((funct3 == 3'b000) & (instr[30] == 1'b0) & (opcode == 7'b0110011)) ? 5'b00000 : // add
                      ((funct3 == 3'b000) & (instr[30] == 1'b1) & (opcode == 7'b0110011)) ? 5'b00001 : // sub
