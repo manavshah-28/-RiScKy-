@@ -23,7 +23,7 @@ wire[31:0] ALU_in2;
 wire[31:0] ALU_res;
 
 wire Controller_WE;
-wire [3:0]Controller_ALU; //made 4 bits for R type instructions
+wire [4:0]Controller_ALU; //made 4 bits for R type instructions // now made 5 bits for sw
 
 wire [31:0]immediate;
 
