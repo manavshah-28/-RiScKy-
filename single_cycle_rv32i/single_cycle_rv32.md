@@ -134,3 +134,17 @@ PC	Machine Code	Basic Code	    Original Code
 0xc	0x00040413	    addi x8 x8 0	addi x8,x8,0
 ```
 ![Alt text](image-13.png)
+
+# Store instructions test.
+
+register configuration.
+5 -> x14
+4 -> x2
+```
+PC	Machine Code	Basic Code	    Original Code
+0x0	0x00E12423	    sw x14 8(x2)	sw x14, 8(x2)     # data in x14 to be stored in data memory. The address at which it is stored = [(data from x2) + (immediate 8)]. ie. 5 stored in Data mem location 12.
+0x4	0x00812603	    lw x12 8(x2)	lw x12,8(x2)      # loads data from data memory posn 12 into register x12.
+0x8	0x00060613	    addi x12 x12 0	addi x12,x12,0    # adds data in x12 with zero and stores in x12 (only done to see this on gtkwave).
+```
+![Alt text](image-14.png)
+
