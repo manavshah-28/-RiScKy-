@@ -56,7 +56,7 @@ Regfile regfile(.clk(clk),
                 .AddA(Instr[19:15]), // [19:15] = rs1
                 .DataA(ALU_in1),
                 .AddB(Instr[24:20]), // [24:20] = rs2
-                .DataB(mux_in_a));   // has to go in a input of mux
+                .DataB(mux_in_a));   // has to go in a input of mux // for store instruction this is fed into the DataIP of data mem
 
 ALU ALU(.A(ALU_in1),
         .B(ALU_in2),
@@ -86,7 +86,7 @@ mux mux(.a(mux_in_a),
 
 Data_mem Data_memory(.clk(clk),
                      .A_mem(ALU_res),
-                     .DataIP(),
+                     .DataIP(mux_in_a),
                      .MemRW(RW), // controller controlls this. if 0 : read, 1: write
                      .D_read(dmem_out));
 

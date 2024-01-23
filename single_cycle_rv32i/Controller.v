@@ -38,9 +38,9 @@ assign ALU_control = ((funct3 == 3'b000) & (instr[30] == 1'b0) & (opcode == 7'b0
                      ((opcode == 7'b0000011) & (funct3 == 3'b101)) ? 5'b01110: //LHU load halfword unsigned
 
                      // SW
-                     ((opcode == 7'b0100011) & (funct3 = 3'b000)) ? 5'b01111: // SB
-                     ((opcode == 7'b0100011) & (funct3 = 3'b000)) ? 5'b10000: // SH
-                     ((opcode == 7'b0100011) & (funct3 = 3'b000)) ? 5'b10001: // SW
+                     ((opcode == 7'b0100011) & (funct3 == 3'b000)) ? 5'b01111: // SB
+                     ((opcode == 7'b0100011) & (funct3 == 3'b001)) ? 5'b10000: // SH
+                     ((opcode == 7'b0100011) & (funct3 == 3'b010)) ? 5'b10001: // SW
 
 
 

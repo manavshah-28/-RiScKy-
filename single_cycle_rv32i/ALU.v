@@ -27,6 +27,11 @@ assign ALU_result = (control == 5'b00000) ? A + B :        //0 add
                     (control == 5'b01101) ?  {{25{1'b0}},A[6:0]} +  B  : // LBU             
                     (control == 5'b01110) ?  {{17{1'b0}},A[14:0]} + B  : // LHU             
                      
+                    // SB,SH,SW
+                    (control == 5'b01111) ?  {{24{1'b0}},A[7:0]} +  B  : // SB
+                    (control == 5'b10000) ?  {{16{1'b0}},A[15:0]} + B  : // SH
+                    (control == 5'b10001) ?  A +  B  :                   // SW
+
                     //default 
                     32'h00000000;
                     

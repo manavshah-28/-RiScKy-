@@ -1,5 +1,5 @@
 $date
-	Tue Jan 23 11:03:22 2024
+	Tue Jan 23 11:17:42 2024
 $end
 $version
 	Icarus Verilog
@@ -24,13 +24,13 @@ $var wire 32 * PC_Top [31:0] $end
 $var wire 32 + PCP4_Top [31:0] $end
 $var wire 32 , Instr [31:0] $end
 $var wire 1 - Controller_WE $end
-$var wire 4 . Controller_ALU [3:0] $end
+$var wire 5 . Controller_ALU [4:0] $end
 $var wire 32 / ALU_res [31:0] $end
 $var wire 32 0 ALU_in2 [31:0] $end
 $var wire 32 1 ALU_in1 [31:0] $end
 $var reg 1 2 write $end
 $scope module ALU $end
-$var wire 4 3 control [3:0] $end
+$var wire 5 3 control [4:0] $end
 $var wire 32 4 alu_slt [31:0] $end
 $var wire 32 5 B [31:0] $end
 $var wire 32 6 ALU_result [31:0] $end
@@ -38,9 +38,9 @@ $var wire 32 7 A [31:0] $end
 $upscope $end
 $scope module Data_memory $end
 $var wire 32 8 A_mem [31:0] $end
-$var wire 32 9 DataIP [31:0] $end
 $var wire 1 ! clk $end
 $var wire 1 ) MemRW $end
+$var wire 32 9 DataIP [31:0] $end
 $var wire 32 : D_read [31:0] $end
 $upscope $end
 $scope module Instruction_memory $end
@@ -69,7 +69,7 @@ $var wire 5 G rs2 [4:0] $end
 $var wire 1 ( WB_sel $end
 $var wire 1 ) MemRW $end
 $var wire 1 $ Imm_mux_SEL $end
-$var wire 4 H ALU_control [3:0] $end
+$var wire 5 H ALU_control [4:0] $end
 $var reg 1 - RegWE $end
 $upscope $end
 $scope module immediate_gen $end
@@ -138,7 +138,7 @@ b100 =
 b0 <
 b0 ;
 b0 :
-bz 9
+b0 9
 b0 8
 b0 7
 b0 6
@@ -193,6 +193,7 @@ b111 K
 0)
 1(
 b11 %
+b11 9
 b11 M
 b11 U
 b11 1
@@ -236,6 +237,7 @@ b0 K
 1)
 0(
 b0 %
+b0 9
 b0 M
 b0 U
 b1110 1
@@ -285,6 +287,7 @@ b111 K
 0)
 1(
 b11 %
+b11 9
 b11 M
 b11 U
 b11 1
@@ -336,6 +339,7 @@ b0 K
 1)
 0(
 b0 %
+b0 9
 b0 M
 b0 U
 b1110 1
@@ -386,6 +390,7 @@ bx K
 x)
 x(
 bx %
+bx 9
 bx M
 bx U
 bx 1
