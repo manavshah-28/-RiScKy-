@@ -4,6 +4,9 @@
 `include "Regfile.v"
 `include "Instruction_Memory.v"
 `include "ALU.v"
+`include "Imm_Gen.v"
+`include "branch_comp.v"
+`include "Data_mem.v"
 
 module RV32I(clk,rst);
 
@@ -17,8 +20,6 @@ wire [31:0]PC_4;
 
 wire [31:0]alu;
 
-wire [31:0]reg_DataD;
-
 wire [31:0]reg_DataA;
 wire [31:0]reg_DataB;
 
@@ -26,6 +27,11 @@ wire [31:0]immediate;
 
 wire [31:0]alu_in1;
 wire [31:0]alu_in2;
+
+
+wire [31:0]DataR; // Data memory output
+
+wire [31:0]wb;
 
 // Instruction
 wire [31:0]Instr;
@@ -35,7 +41,13 @@ wire PCSel = 0;
 wire RegWEn = 1;
 wire ASel;
 wire BSel;
-wire ALUSel;
+wire [4:0]ALUSel;
+wire [2:0]ImmSel;
+wire BrUn;
+wire MemRW;
+wire [1:0]WBSel;
+
+wire BrEq,BrLt;
 
 mux muxPC(.a(PC_4),
           .b(alu),
@@ -58,7 +70,7 @@ Regfile regfile(.clk(clk),
         .rst(rst),
         .WE(RegWEn),
         .AddD(Instr[11:7]),
-        .DataD(reg_DataD),
+        .DataD(wb),
         .AddA(Instr[19:15]),
         .DataA(reg_DataA),
         .AddB(Instr[24:20]),
@@ -79,5 +91,26 @@ ALU ALU_Top(.A(alu_in1),
             .control(ALUSel),
             .ALU_result(alu));
 
+Imm_Gen Imm_Gen(.Instr(Instr),
+                .ImmSel(ImmSel),
+                .immediate(immediate));
+
+branch_comp branch_comp(.A(reg_DataA),
+                        .B(reg_DataB),
+                        .BrUn(BrUn),
+                        .BrEq(BrEq),
+                        .BrLt(BrLt));
+
+Data_mem Data_mem(.clk(clk),
+                  .A_mem(alu),
+                  .DataIP(reg_DataB),
+                  .MemRW(MemRW),
+                  .D_read(DataR)); 
+
+mux3 mux3(.a(DataR),
+          .b(alu),
+          .c(PC_4),
+          .d(wb),
+          .sel(WBSel));
 
 endmodule
