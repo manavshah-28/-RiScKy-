@@ -1,0 +1,260 @@
+$date
+	Thu Jan 25 17:44:01 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module RV32_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$scope module DUT $end
+$var wire 1 # PCSel $end
+$var wire 1 $ RegWEn $end
+$var wire 32 % alu [31:0] $end
+$var wire 1 ! clk $end
+$var wire 32 & reg_DataD [31:0] $end
+$var wire 1 " rst $end
+$var wire 32 ' reg_DataB [31:0] $end
+$var wire 32 ( reg_DataA [31:0] $end
+$var wire 32 ) PC_out [31:0] $end
+$var wire 32 * PC_in [31:0] $end
+$var wire 32 + PC_4 [31:0] $end
+$var wire 32 , Instr [31:0] $end
+$scope module PCPlus4Top $end
+$var wire 32 - PC_add [31:0] $end
+$var wire 32 . PCP4_add [31:0] $end
+$upscope $end
+$scope module PC_Top $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 / PCP4 [31:0] $end
+$var reg 32 0 PC [31:0] $end
+$upscope $end
+$scope module imem $end
+$var wire 32 1 A [31:0] $end
+$var wire 1 " rst $end
+$var wire 32 2 RD [31:0] $end
+$upscope $end
+$scope module muxPC $end
+$var wire 32 3 a [31:0] $end
+$var wire 32 4 b [31:0] $end
+$var wire 1 # sel $end
+$var wire 32 5 c [31:0] $end
+$upscope $end
+$scope module regfile $end
+$var wire 5 6 AddA [4:0] $end
+$var wire 5 7 AddB [4:0] $end
+$var wire 5 8 AddD [4:0] $end
+$var wire 32 9 DataD [31:0] $end
+$var wire 1 $ WE $end
+$var wire 1 ! clk $end
+$var wire 1 " rst $end
+$var wire 32 : DataB [31:0] $end
+$var wire 32 ; DataA [31:0] $end
+$var reg 5 < index [4:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b1 <
+b0 ;
+b0 :
+bz 9
+b0 8
+b0 7
+b0 6
+b100 5
+bz 4
+b100 3
+b0 2
+b0 1
+b0 0
+b100 /
+b100 .
+b0 -
+b0 ,
+b100 +
+b100 *
+b0 )
+b0 (
+b0 '
+bz &
+bz %
+1$
+0#
+0"
+1!
+$end
+#50
+0!
+#100
+1!
+#150
+b101 '
+b101 :
+b100 (
+b100 ;
+b1110 7
+b10 6
+b1000 8
+b111000010000010000100011 ,
+b111000010000010000100011 2
+0!
+1"
+#200
+bz '
+bz :
+b1000 7
+b1100 8
+b100000010010011000000011 ,
+b100000010010011000000011 2
+b1000 *
+b1000 /
+b1000 5
+b1000 +
+b1000 .
+b1000 3
+b100 )
+b100 -
+b100 0
+b100 1
+1!
+#250
+0!
+#300
+b0 '
+b0 :
+bz (
+bz ;
+b0 7
+b1100 6
+b1100000011000010011 ,
+b1100000011000010011 2
+b1100 *
+b1100 /
+b1100 5
+b1100 +
+b1100 .
+b1100 3
+b1000 )
+b1000 -
+b1000 0
+b1000 1
+1!
+#350
+0!
+#400
+bx '
+bx :
+bx (
+bx ;
+bx 7
+bx 6
+bx 8
+bx ,
+bx 2
+b10000 *
+b10000 /
+b10000 5
+b10000 +
+b10000 .
+b10000 3
+b1100 )
+b1100 -
+b1100 0
+b1100 1
+1!
+#450
+0!
+#500
+b10100 *
+b10100 /
+b10100 5
+b10100 +
+b10100 .
+b10100 3
+b10000 )
+b10000 -
+b10000 0
+b10000 1
+1!
+#550
+0!
+#600
+b11000 *
+b11000 /
+b11000 5
+b11000 +
+b11000 .
+b11000 3
+b10100 )
+b10100 -
+b10100 0
+b10100 1
+1!
+#650
+0!
+#700
+b11100 *
+b11100 /
+b11100 5
+b11100 +
+b11100 .
+b11100 3
+b11000 )
+b11000 -
+b11000 0
+b11000 1
+1!
+#750
+0!
+#800
+b100000 *
+b100000 /
+b100000 5
+b100000 +
+b100000 .
+b100000 3
+b11100 )
+b11100 -
+b11100 0
+b11100 1
+1!
+#850
+0!
+#900
+b100100 *
+b100100 /
+b100100 5
+b100100 +
+b100100 .
+b100100 3
+b100000 )
+b100000 -
+b100000 0
+b100000 1
+1!
+#950
+0!
+#1000
+b101000 *
+b101000 /
+b101000 5
+b101000 +
+b101000 .
+b101000 3
+b100100 )
+b100100 -
+b100100 0
+b100100 1
+1!
+#1050
+0!

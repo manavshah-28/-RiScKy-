@@ -1,11 +1,11 @@
-`include "RV32_top.v"
+`include "RV32I.v"
 
 module RV32_tb();
 
 reg clk=0,rst;
 
 //module instantiation
-RV32_top DUT(.clk(clk),
+RV32I DUT(.clk(clk),
              .rst(rst));
 
 // clocking
