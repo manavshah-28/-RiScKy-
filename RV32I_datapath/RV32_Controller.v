@@ -1,5 +1,5 @@
 module RV32_Controller(i_instuction, BrEq, BrLt,
-PCSel, ImmSel, BrUn, ASel, Bsel, ALUSel, MemRW, RegWEn, WBSel);
+PCSel, ImmSel, BrUn, ASel, BSel, ALUSel, MemRW, RegWEn, WBSel);
 
 input [31:0] i_instuction;
 input BrEq,BrLt;
@@ -12,7 +12,7 @@ assign red_inst = {i_instuction[30],i_instuction[14:12],i_instuction[6:2],BrEq,B
 output PCSel;
 output [2:0]ImmSel;
 output BrUn;
-output ASel,Bsel;
+output ASel,BSel;
 output [3:0]ALUSel;
 output MemRW;
 output RegWEn;
