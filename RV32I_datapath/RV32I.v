@@ -7,6 +7,7 @@
 `include "Imm_Gen.v"
 `include "branch_comp.v"
 `include "Data_mem.v"
+`include "RV32_Controller.v"
 
 module RV32I(clk,rst);
 
