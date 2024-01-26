@@ -42,7 +42,7 @@ wire PCSel = 0;
 wire RegWEn = 1;
 wire ASel;
 wire BSel;
-wire [4:0]ALUSel;
+wire [3:0]ALUSel;
 wire [2:0]ImmSel;
 wire BrUn;
 wire MemRW;
@@ -113,5 +113,18 @@ mux3 mux3(.a(DataR),
           .c(PC_4),
           .d(wb),
           .sel(WBSel));
+
+RV32_Controller Controller(.i_instuction(Instr), 
+                           .BrEq(BrEq), 
+                           .BrLt(BrLt),
+                           .PCSel(PCSel), 
+                           .ImmSel(ImmSel), 
+                           .BrUn(BrUn), 
+                           .ASel(ASel), 
+                           .Bsel(BSel), 
+                           .ALUSel(ALUSel), 
+                           .MemRW(MemRW), 
+                           .RegWEn(RegWEn), 
+                           .WBSel(WBSel));
 
 endmodule
