@@ -1,10 +1,23 @@
-# Single Cycle RV32I Datapth Design
+# RV32I core design
+
+## Objectives
+- [x] Study RV32I Instruction Set architecture.
+- [x] Design Datapth for single Cycle RV32I processor. (verilog).
+- [x] Design Controller.
+- [x] Design GUI for interfacing with data memory, registers and instruction hex files. (check branches).
+- [ ] Implement 5 stage pipeline of the processor (in progress).
+
+## Tech stack
+* Iverilog
+* Gtkwave
+* Verilog HDL
+* Python
 
 ## Step by step implementation and progress.
 * Module files were written.
 * Top file is completed.
 * Instantiating PC and PC_adder.
-* ![Alt text](image.png)
+* ![Alt text](/single_cycle_rv32i/image.png)
 * Instructions are properly read out of the instructions.hex file.
   
 The test code is as follows for the add instruction datapath test.
@@ -29,13 +42,13 @@ Inside instructions.hex
 005202B3
 ```
 
-* ![Alt text](image-1.png)
+* ![Alt text](/single_cycle_rv32i/image-1.png)
 * The Add istruction works well, only that Data is not being written into the register, since WE is off.
-* ![Alt text](image-2.png)
+* ![Alt text](/single_cycle_rv32i/image-2.png)
 * After adding WE, this is resolved.
-* ![Alt text](image-3.png)
+* ![Alt text](/single_cycle_rv32i/image-3.png)
 * added controller(with decoder functionality embedded directly)
-* ![Alt text](image-4.png)
+* ![Alt text](/single_cycle_rv32i/image-4.png)
 * added sub instruction capability as well
   
 |PC	  | Machine Code  | 	Basic Code	| Original Code   |
@@ -47,7 +60,7 @@ Inside instructions.hex
 |0x10 |	0x403282B3    |	sub x5 x5 x3    |	sub x5,x5,x3  |
 |0x14 |	0x404282B3    |	sub x5 x5 x4    |	sub x5,x5,x4  |
 
-* ![Alt text](image-5.png)
+* ![Alt text](/single_cycle_rv32i/image-5.png)
 * Now moving on to other R type instructions of RV32I
 * using funct3 to add all those instructions support. Changes will have to be made to ALU and Controller modules.
 * Thats done. R type instructions are now supported on my core(sra left).
@@ -69,7 +82,7 @@ x2 = 2
 x3 = 3
 
 ```
-![Alt text](image-6.png)
+![Alt text](/single_cycle_rv32i/image-6.png)
 
 ## slti
 * Test program for this instuction.
@@ -82,7 +95,7 @@ PC	  Machine Code	Basic Code	     Original Code
 0x10  0x00052093	slti x1 x10 0	 slti x1,x10, 0
 0x14  0x00A52113	slti x2 x10 10	 slti x2,x10, 10
 ```
-* ![Alt text](image-7.png)
+* ![Alt text](/single_cycle_rv32i/image-7.png)
   
 ## andi and ori
 ```
@@ -98,9 +111,9 @@ Register configuration:
 x2 = 2
 x3 = 3
 ```
-* ![Alt text](image-8.png)
+* ![Alt text](/single_cycle_rv32i/image-8.png)
 ## slli
-![Alt text](image-9.png)
+![Alt text](/single_cycle_rv32i/image-9.png)
 
 # Test for LW instruction
 ```
@@ -108,7 +121,7 @@ PC	Machine Code	Basic Code	    Original Code
 0x0	0x0073A303	    lw x6 7(x7)	    lw x6, 7(x7)
 0x4	0x00030313	    addi x6 x6 0	addi x6,x6,0
 ```
-![Alt text](image-10.png)
+![Alt text](/single_cycle_rv32i/image-10.png)
 
 ## explanaition
 ```
@@ -122,9 +135,9 @@ lw x6, 7(x7)
 * Thus lw is verified.
 * similarly tests for :
 * lh x6, 7(x7) 
-* ![Alt text](image-11.png)
+* ![Alt text](/single_cycle_rv32i/image-11.png)
 * lb x6, 7(x7)
-* ![Alt text](image-12.png)
+* ![Alt text](/single_cycle_rv32i/image-12.png)
 * Test for lbu,lhu
 ```	
 PC	Machine Code	Basic Code	    Original Code
@@ -133,7 +146,7 @@ PC	Machine Code	Basic Code	    Original Code
 0x8	0x0073C403	    lbu x8 7(x7)	lbu x8,7(x7)
 0xc	0x00040413	    addi x8 x8 0	addi x8,x8,0
 ```
-![Alt text](image-13.png)
+![Alt text](/single_cycle_rv32i/image-13.png)
 
 # Store instructions test.
 
@@ -146,5 +159,5 @@ PC	Machine Code	Basic Code	    Original Code
 0x4	0x00812603	    lw x12 8(x2)	lw x12,8(x2)      # loads data from data memory posn 12 into register x12.
 0x8	0x00060613	    addi x12 x12 0	addi x12,x12,0    # adds data in x12 with zero and stores in x12 (only done to see this on gtkwave).
 ```
-![Alt text](image-14.png)
+![Alt text](/single_cycle_rv32i/image-14.png)
 
