@@ -12,6 +12,9 @@
 * Gtkwave
 * Verilog HDL
 * Python
+  
+# Datapath Design
+![Alt text](<-RiScKy- .jpg>)
 
 ## Step by step implementation and progress.
 * Module files were written.
