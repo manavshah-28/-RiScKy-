@@ -14,10 +14,10 @@
 * Python
   
 # Datapath Design
-![Alt text](<-RiScKy- .jpg>)
+![Alt text](</getting_started/images/-RiScKy- .jpg>)
 
 # Controller Design
-![alt text](<controller_design.jpeg>)
+![alt text](</getting_started/images/controller_design.jpeg>)
 
 ## Step by step implementation and progress.
 * Module files were written.
