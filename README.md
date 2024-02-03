@@ -16,6 +16,9 @@
 # Datapath Design
 ![Alt text](<-RiScKy- .jpg>)
 
+# Controller Design
+![alt text](<controller_design.jpeg>)
+
 ## Step by step implementation and progress.
 * Module files were written.
 * Top file is completed.
