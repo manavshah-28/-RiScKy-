@@ -14,7 +14,7 @@
 * Python
   
 # Datapath Design
-![Alt text](</getting_started/images/-RiScKy- .jpg>)
+![Alt text](</getting_started/images/-RiScKy-.jpg>)
 
 # Controller Design
 ![alt text](</getting_started/images/controller_design.jpeg>)
