@@ -78,3 +78,11 @@ endmodule
 // so in total, 11 bits will be used to generate control word output. 15 bits
 // control word is 15 bits 
 
+
+/*
+                      (red_inst[9:1]  == 9'b000110000) ? 15'b001101100000000 :  // beq BrEq = 0
+                      (red_inst[9:1]  == 9'b000110001) ? 15'b101101100000000 :  // beq BrEq = 1
+                      (red_inst[9:1]  == 9'b001110000) ? 15'b101101100000000 :  // bne BrEq = 0
+                      (red_inst[9:1]  == 9'b001110001) ? 15'b001101100000000 :  // bne BrEq = 1
+
+*/
