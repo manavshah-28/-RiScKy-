@@ -25,6 +25,8 @@
 * Gtkwave
 * Verilog HDL
 * Python
+* Git/Github
+* VS Code
   
 ## Controller Design
 ![alt text](</getting_started/images/controller_design.jpeg>)
