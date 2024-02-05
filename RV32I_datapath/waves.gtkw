@@ -1,0 +1,134 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri Jan 26 13:21:35 2024
+[*]
+[dumpfile] "D:\Real Learning\myRISCYcore\-RiScKy-\RV32I_datapath\RV32_tb.vcd"
+[dumpfile_mtime] "Fri Jan 26 13:11:10 2024"
+[dumpfile_size] 6135
+[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RV32I_datapath\waves.gtkw"
+[timestart] 36
+[size] 1536 841
+[pos] -87 -87
+*-7.000000 163 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] RV32_tb.DUT.
+[sst_width] 197
+[signals_width] 293
+[sst_expanded] 1
+[sst_vpaned_height] 238
+@28
+RV32_tb.clk
+RV32_tb.rst
+@22
+RV32_tb.DUT.PC_Top.PC[31:0]
+@c00200
+-PC MUX
+@22
+RV32_tb.DUT.muxPC.a[31:0]
+RV32_tb.DUT.muxPC.b[31:0]
+RV32_tb.DUT.muxPC.c[31:0]
+@28
+RV32_tb.DUT.muxPC.sel
+@1401200
+-PC MUX
+@c00200
+-Instruction Memory
+@22
+RV32_tb.DUT.imem.A[31:0]
+RV32_tb.DUT.imem.RD[31:0]
+@1401200
+-Instruction Memory
+@c00200
+-Regfile
+@22
+RV32_tb.DUT.regfile.AddA[4:0]
+RV32_tb.DUT.regfile.AddB[4:0]
+RV32_tb.DUT.regfile.AddD[4:0]
+RV32_tb.DUT.regfile.DataA[31:0]
+RV32_tb.DUT.regfile.DataB[31:0]
+RV32_tb.DUT.regfile.DataD[31:0]
+@1401200
+-Regfile
+@c00200
+-Branch Comparator
+@22
+RV32_tb.DUT.branch_comp.A[31:0]
+RV32_tb.DUT.branch_comp.B[31:0]
+@28
+RV32_tb.DUT.branch_comp.BrEq
+RV32_tb.DUT.branch_comp.BrLt
+RV32_tb.DUT.branch_comp.BrUn
+@1401200
+-Branch Comparator
+@c00200
+-muxA
+@22
+RV32_tb.DUT.muxA.a[31:0]
+RV32_tb.DUT.muxA.b[31:0]
+RV32_tb.DUT.muxA.c[31:0]
+@28
+RV32_tb.DUT.muxA.sel
+@1401200
+-muxA
+@c00200
+-muxB
+@22
+RV32_tb.DUT.muxB.a[31:0]
+RV32_tb.DUT.muxB.b[31:0]
+RV32_tb.DUT.muxB.c[31:0]
+@28
+RV32_tb.DUT.muxB.sel
+@1401200
+-muxB
+@c00200
+-ALU
+@22
+RV32_tb.DUT.ALU_Top.A[31:0]
+RV32_tb.DUT.ALU_Top.B[31:0]
+RV32_tb.DUT.ALU_Top.ALU_result[31:0]
+RV32_tb.DUT.ALU_Top.control[3:0]
+@1401200
+-ALU
+@c00200
+-Data Memory
+@22
+RV32_tb.DUT.Data_mem.A_mem[31:0]
+RV32_tb.DUT.Data_mem.D_read[31:0]
+RV32_tb.DUT.Data_mem.DataIP[31:0]
+@28
+RV32_tb.DUT.Data_mem.MemRW
+@1401200
+-Data Memory
+@c00200
+-WB mux
+@22
+RV32_tb.DUT.mux3.a[31:0]
+RV32_tb.DUT.mux3.b[31:0]
+RV32_tb.DUT.mux3.c[31:0]
+RV32_tb.DUT.mux3.d[31:0]
+@28
+RV32_tb.DUT.mux3.sel[1:0]
+@1401200
+-WB mux
+@c00200
+-Controller
+@22
+RV32_tb.DUT.Controller.ALUSel[3:0]
+@28
+RV32_tb.DUT.Controller.ASel
+RV32_tb.DUT.Controller.BSel
+RV32_tb.DUT.Controller.BrEq
+RV32_tb.DUT.Controller.BrLt
+RV32_tb.DUT.Controller.BrUn
+RV32_tb.DUT.Controller.ImmSel[2:0]
+RV32_tb.DUT.Controller.MemRW
+RV32_tb.DUT.Controller.PCSel
+RV32_tb.DUT.Controller.RegWEn
+RV32_tb.DUT.Controller.WBSel[1:0]
+@22
+RV32_tb.DUT.Controller.control_word[14:0]
+RV32_tb.DUT.Controller.i_instuction[31:0]
+RV32_tb.DUT.Controller.red_inst[10:0]
+@1401200
+-Controller
+[pattern_trace] 1
+[pattern_trace] 0
