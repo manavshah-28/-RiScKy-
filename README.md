@@ -1,5 +1,5 @@
 # RV32I core design
-
+                                            
 ## Objectives
 - [x] Study RV32I Instruction Set architecture.
 - [x] Design Datapth for single Cycle RV32I processor. (verilog).
