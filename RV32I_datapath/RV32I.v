@@ -38,8 +38,8 @@ wire [31:0]wb;
 wire [31:0]Instr;
 
 // control signal wires
-wire PCSel = 0;
-wire RegWEn = 1;
+wire PCSel;
+wire RegWEn;
 wire ASel;
 wire BSel;
 wire [3:0]ALUSel;
