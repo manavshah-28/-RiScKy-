@@ -1,24 +1,31 @@
 # RV32I core design
 
-![alt text](</getting_started/images/RiScKy banner.png>)                                         
+![alt text](</getting_started/images/RiScKy banner.png>)    
+## Datapath   
+![Alt text](</getting_started/images/-RiScKy-.jpg>)
+
 ## Objectives
 - [x] Study RV32I Instruction Set architecture.
 - [x] Design Datapth for single Cycle RV32I processor. (verilog).
 - [x] Design Controller.
-- [x] Design GUI for interfacing with data memory, registers and instruction hex files. (check branches).
+- [x] Design GUI for interfacing with data memory, registers and instruction hex files.
 - [ ] Implement 5 stage pipeline of the processor (in progress).
 
+## Supported Instructions (RV32I base instruction set)
+* [x] add,sub,sll,slt,sltu,xor,srl,sra,or,and
+* [x] addi,slti,sltiu,xori,ori,andi,slli,srli,srai
+* [x] lb,lh,lw,lbu,lhu
+* [x] sb,sh,sw
+* [x] beq,bne,blt,bge,bltu,bgeu
+* [ ] lui,auipc,jal,jalr
+* [ ] fence,ecall,ebreak 
+  
 ## Tech stack
 * Iverilog
 * Gtkwave
 * Verilog HDL
 * Python
   
-## Datapath Design
-![Alt text](</getting_started/images/-RiScKy-.jpg>)
-
-* The Datapath and Controller are independently designed.
-* The conrtroller is designed for easy debuggin and adaptability.
 ## Controller Design
 ![alt text](</getting_started/images/controller_design.jpeg>)
 
