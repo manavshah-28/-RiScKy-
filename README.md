@@ -241,3 +241,4 @@ PC	Machine Code	Basic Code	    Original Code
 * Enter the command ```dot -Tpng show.dot > output.png```
 * This will make a png image of your design with the name output.png
 * ![alt text](/RiScKy%20C0RE/output.png)
+* 
