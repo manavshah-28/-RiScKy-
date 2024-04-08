@@ -1,4 +1,10 @@
 # RV32I core design
+- [Objectives](#objectives)
+- [Datapath](#datapath)
+- [Supported instructions](#supported-instructions-rv32i-base-instruction-set)
+- [Tech stack](#tech-stack)
+- [Controller Design](#controller-design)
+
 
 ![alt text](</getting_started/images/RiScKy banner.png>)    
 ## Datapath   
