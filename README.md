@@ -231,11 +231,11 @@ PC	Machine Code	Basic Code	    Original Code
 * This will open up OSS CAD Suite
 * ```yosys```
 * This opens yosys
-* ![alt text](image.png)
+* ![alt text](/getting_started/images/yosys1.png)
 * Now enter the command ```read_verilog RV32I.v```
-* ![alt text](image-1.png)
+* ![alt text](/getting_started/images/yosys2.png)
 * Next enter ```show RV32I```
-* ![alt text](image-2.png)
+* ![alt text](/getting_started/images/yosys3.png)
 * Install [Graphviz](https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/windows_10_cmake_Release_graphviz-install-10.0.1-win64.exe)
 * Open another command prompt terminal and navigate to the same directory
 * Enter the command ```dot -Tpng show.dot > output.png```
