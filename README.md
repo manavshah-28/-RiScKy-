@@ -223,3 +223,28 @@ PC	Machine Code	Basic Code	    Original Code
 ```
 ![Alt text](/getting_started/images/image-14.png)
 
+# Yosys, Graphviz
+
+* install [yosys](https://github.com/YosysHQ/yosys) 
+* windows exe of [yosys](https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-04-08/oss-cad-suite-windows-x64-20240408.exe)
+
+## Using Yosys
+
+* press start in windows
+* open command prompt
+* go to the directory where your verilog files are stored
+* ```<extracted_location>\oss-cad-suite\environment.bat```
+* This will open up OSS CAD Suite
+* ```yosys```
+* This opens yosys
+* ![alt text](/getting_started/images/yosys1.png)
+* Now enter the command ```read_verilog RV32I.v```
+* ![alt text](/getting_started/images/yosys2.png)
+* Next enter ```show RV32I```
+* ![alt text](/getting_started/images/yosys3.png)
+* Install [Graphviz](https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/windows_10_cmake_Release_graphviz-install-10.0.1-win64.exe)
+* Open another command prompt terminal and navigate to the same directory
+* Enter the command ```dot -Tpng show.dot > output.png```
+* This will make a png image of your design with the name output.png
+* ![alt text](/RiScKy%20C0RE/output.png)
+* 
