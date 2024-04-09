@@ -1,21 +1,38 @@
 # RV32I core design
 ![alt text](</getting_started/images/RiScKy banner.png>)  
 
-- [Objectives](#objectives)
-- [Datapath](#datapath)
-- [Supported instructions](#supported-instructions-rv32i-base-instruction-set)
-- [Tech stack](#tech-stack)
-- [Controller Design](#controller-design)
-
-## Datapath   
-![Alt text](</getting_started/images/-RiScKy-.jpg>)
-
+## Table of contents
+- [RV32I core design](#rv32i-core-design)
+  - [Table of contents](#table-of-contents)
+  - [Objectives](#objectives)
+  - [Datapath](#datapath)
+  - [Supported Instructions (RV32I base instruction set)](#supported-instructions-rv32i-base-instruction-set)
+  - [Tech stack](#tech-stack)
+  - [Controller Design](#controller-design)
+  - [GUI for Registers \& Data Memory](#gui-for-registers--data-memory)
+    - [Problem](#problem)
+    - [Solution](#solution)
+- [Step by step implementation of instructions in datapath.](#step-by-step-implementation-of-instructions-in-datapath)
+  - [Immediate datapath testing](#immediate-datapath-testing)
+    - [addi](#addi)
+    - [slti](#slti)
+    - [andi and ori](#andi-and-ori)
+    - [slli](#slli)
+  - [Test for LW instruction](#test-for-lw-instruction)
+    - [explanaition](#explanaition)
+  - [Store instructions test.](#store-instructions-test)
+- [Yosys](#yosys)
+  - [Using Yosys](#using-yosys)
+    - [diagram created by YOSYS](#diagram-created-by-yosys)
 ## Objectives
 - [x] Study RV32I Instruction Set architecture.
 - [x] Design Datapth for single Cycle RV32I processor. (verilog).
 - [x] Design Controller.
 - [x] Design GUI for interfacing with data memory, registers and instruction hex files.
 - [ ] Implement 5 stage pipeline of the processor (in progress).
+
+## Datapath   
+![Alt text](</getting_started/images/-RiScKy-.jpg>)
 
 ## Supported Instructions (RV32I base instruction set)
 * [x] add,sub,sll,slt,sltu,xor,srl,sra,or,and
@@ -33,6 +50,8 @@
 * Python
 * Git/Github
 * VS Code
+* Yosys
+* Graphviz
   
 ## Controller Design
 ![alt text](</getting_started/images/controller_design.jpeg>)
@@ -74,8 +93,7 @@
 00000000
 00000000
 ``` 
-
-# Step by step implementation and progress.
+# Step by step implementation of instructions in datapath.
 * Module files were written.
 * Top file is completed.
 * Instantiating PC and PC_adder.
@@ -127,9 +145,9 @@ Inside instructions.hex
 * using funct3 to add all those instructions support. Changes will have to be made to ALU and Controller modules.
 * Thats done. R type instructions are now supported on my core(sra left).
   
-# Immediate datapath testing
+## Immediate datapath testing
 
-## addi
+### addi
 The program executed:
 ```
 PC	Machine Code	Basic Code	      Original Code
@@ -146,7 +164,7 @@ x3 = 3
 ```
 ![Alt text](/getting_started/images/image-6.png)
 
-## slti
+### slti
 * Test program for this instuction.
 ```
 PC	  Machine Code	Basic Code	     Original Code
@@ -159,7 +177,7 @@ PC	  Machine Code	Basic Code	     Original Code
 ```
 * ![Alt text](/getting_started/images/image-7.png)
   
-## andi and ori
+### andi and ori
 ```
 PC	Machine Code	Basic Code	    Original Code
 0x0	0x003172B3	    and x5 x2 x3	and x5,x2,x3
@@ -174,10 +192,10 @@ x2 = 2
 x3 = 3
 ```
 * ![Alt text](/getting_started/images/image-8.png)
-## slli
+### slli
 ![Alt text](/getting_started/images/image-9.png)
 
-# Test for LW instruction
+## Test for LW instruction
 ```
 PC	Machine Code	Basic Code	    Original Code
 0x0	0x0073A303	    lw x6 7(x7)	    lw x6, 7(x7)
@@ -185,7 +203,7 @@ PC	Machine Code	Basic Code	    Original Code
 ```
 ![Alt text](/getting_started/images/image-10.png)
 
-## explanaition
+### explanaition
 ```
 lw x6, 7(x7)
 ```
@@ -210,7 +228,7 @@ PC	Machine Code	Basic Code	    Original Code
 ```
 ![Alt text](/getting_started/images/image-13.png)
 
-# Store instructions test.
+## Store instructions test.
 
 register configuration.
 5 -> x14
@@ -223,7 +241,7 @@ PC	Machine Code	Basic Code	    Original Code
 ```
 ![Alt text](/getting_started/images/image-14.png)
 
-# Yosys, Graphviz
+# Yosys
 
 * install [yosys](https://github.com/YosysHQ/yosys) 
 * windows exe of [yosys](https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-04-08/oss-cad-suite-windows-x64-20240408.exe)
@@ -246,5 +264,6 @@ PC	Machine Code	Basic Code	    Original Code
 * Open another command prompt terminal and navigate to the same directory
 * Enter the command ```dot -Tpng show.dot > output.png```
 * This will make a png image of your design with the name output.png
-* ![alt text](/RiScKy%20C0RE/output.png)
-* 
+### diagram created by YOSYS  
+![alt text](/RiScKy%20C0RE/output.png)
+  
