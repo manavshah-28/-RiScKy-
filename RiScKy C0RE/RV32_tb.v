@@ -42,7 +42,7 @@ initial begin
     #150;
 
     rst = 1'b1;
-    #900;
+    #3000;
     $display("End Of Test");
     $finish;
 end
