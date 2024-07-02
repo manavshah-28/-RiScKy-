@@ -266,4 +266,3 @@ PC	Machine Code	Basic Code	    Original Code
 * This will make a png image of your design with the name output.png
 ### diagram created by YOSYS  
 ![alt text](/RiScKy%20C0RE/output.png)
-  
