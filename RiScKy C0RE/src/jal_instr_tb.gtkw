@@ -1,21 +1,21 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Thu Jul 04 12:27:34 2024
+[*] Thu Jul 04 12:57:49 2024
 [*]
 [dumpfile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\RV32_tb.vcd"
-[dumpfile_mtime] "Thu Jul 04 12:21:58 2024"
-[dumpfile_size] 7871
-[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\waves.gtkw"
-[timestart] 0
-[size] 1536 841
-[pos] -139 -139
-*-7.000000 172 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[dumpfile_mtime] "Thu Jul 04 12:56:06 2024"
+[dumpfile_size] 9230
+[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\jal_instr_tb.gtkw"
+[timestart] 587
+[size] 871 832
+[pos] -164 -157
+*-8.000000 779 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] RV32_tb.
 [treeopen] RV32_tb.DUT.
 [sst_width] 197
 [signals_width] 318
 [sst_expanded] 1
-[sst_vpaned_height] 238
+[sst_vpaned_height] 365
 @28
 RV32_tb.DUT.PC_Top.clk
 @24
@@ -24,7 +24,7 @@ RV32_tb.DUT.PC_Top.PC[31:0]
 -imm_gen
 @22
 RV32_tb.DUT.Imm_Gen.Instr[31:0]
-@24
+@421
 RV32_tb.DUT.Imm_Gen.immediate[31:0]
 @1000200
 -imm_gen

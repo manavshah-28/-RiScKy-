@@ -76,6 +76,10 @@ assign control_word = (red_inst[10:2] == 9'b000001100) ? 15'b000000000000101 :  
 
                       ({red_inst[9:2],red_inst[0]} == 9'b101110000) ? 15'b101101100000000 : // bge brEq = (0,1) brLT = (0)
 
+                      ({red_inst[6:2]} == 5'b11011) ? 15'b110001100000110 : // jal 
+                      ({red_inst[6:2]} == 5'b11001) ? 15'b100100100000110 : // jalr 
+
+                      
                       15'b000000000000101;
 
 assign PCSel = control_word[14];
