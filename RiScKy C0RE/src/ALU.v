@@ -43,7 +43,10 @@ assign ALU_result = (control == 4'b0000) ? A + B :        //0 add
                     (control == 4'b1010) ? ({{24{1'b0}},A[7:0]} +  B)  : // LB load only 8 bits
                     (control == 4'b1011) ? ({{16{1'b0}},A[15:0]} + B)  : // LH     
                     (control == 4'b1100) ? ({{25{1'b0}},A[6:0]} +  B)  : // LBU  
-                    (control == 4'b1101) ? ({{17{1'b0}},A[14:0]} + B)  : // LHU            
+                    (control == 4'b1101) ? ({{17{1'b0}},A[14:0]} + B)  : // LHU   
+
+                    (control == 4'b1110) ? B : // B  // added for lui instruction
+         
 
                     //default 
                     32'h00000000;
