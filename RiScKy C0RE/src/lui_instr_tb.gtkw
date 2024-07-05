@@ -1,0 +1,40 @@
+[*]
+[*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
+[*] Fri Jul 05 14:43:00 2024
+[*]
+[dumpfile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\RV32_tb.vcd"
+[dumpfile_mtime] "Fri Jul 05 14:42:25 2024"
+[dumpfile_size] 8472
+[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\lui_instr_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-8.000000 453 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] RV32_tb.
+[treeopen] RV32_tb.DUT.
+[sst_width] 197
+[signals_width] 227
+[sst_expanded] 1
+[sst_vpaned_height] 323
+@28
+RV32_tb.DUT.PC_Top.clk
+@24
+RV32_tb.DUT.PC_Top.PC[31:0]
+@22
+RV32_tb.DUT.Imm_Gen.Instr[31:0]
+@800200
+-regfile
+@24
+RV32_tb.DUT.regfile.AddA[4:0]
+RV32_tb.DUT.regfile.AddB[4:0]
+RV32_tb.DUT.regfile.AddD[4:0]
+RV32_tb.DUT.regfile.DataA[31:0]
+RV32_tb.DUT.regfile.DataB[31:0]
+@23
+RV32_tb.DUT.regfile.DataD[31:0]
+@28
+RV32_tb.DUT.regfile.WE
+@1000200
+-regfile
+[pattern_trace] 1
+[pattern_trace] 0

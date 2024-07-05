@@ -41,7 +41,8 @@
 * [x] sb,sh,sw
 * [x] beq,bne,blt,bge,bltu,bgeu
 * [x] jal, jalr
-* [ ] lui,auipc
+* [x] lui
+* [ ] auipc
 * [ ] fence,ecall,ebreak 
   
 ## Tech stack
