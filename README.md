@@ -23,7 +23,11 @@
 - [x] Design Datapth for single Cycle RV32I processor. (verilog).
 - [x] Design Controller.
 - [x] Design GUI for interfacing with data memory, registers and instruction hex files.
-- [ ] Implement 5 stage pipeline of the processor (in progress).
+- [x] Verify individual instructions with targeted assembly tests.
+- [ ] understand verilator.
+- [ ] understand makefiles.
+- [ ] study other cores for grasping these concepts to move from verilog rtl to verification.
+- [ ] Achieve complete RISCV compliance.
 
 ## Datapath   
 ![Alt text](</getting_started/images/-RiScKy-.jpg>)
