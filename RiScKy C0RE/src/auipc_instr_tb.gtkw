@@ -1,11 +1,11 @@
 [*]
 [*] GTKWave Analyzer v3.3.100 (w)1999-2019 BSI
-[*] Fri Jul 05 14:52:59 2024
+[*] Fri Jul 05 14:53:14 2024
 [*]
 [dumpfile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\RV32_tb.vcd"
 [dumpfile_mtime] "Fri Jul 05 14:52:41 2024"
 [dumpfile_size] 6957
-[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\beq_instr_tb.gtkw"
+[savefile] "D:\Real Learning\myRISCYcore\-RiScKy-\RiScKy C0RE\src\auipc_instr_tb.gtkw"
 [timestart] 0
 [size] 1536 841
 [pos] -139 -139

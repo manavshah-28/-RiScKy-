@@ -80,7 +80,8 @@ assign control_word = (red_inst[10:2] == 9'b000001100) ? 15'b000000000000101 :  
                       ({red_inst[6:2]} == 5'b11001) ? 15'b100100100000110 : // jalr 
 
                       ({red_inst[6:2]} == 5'b01101) ? 15'b010100111100101 : // lui // made different alu control '1110' which forwards B to output and // new immediate type named 'U' '101'
-
+                      ({red_inst[6:2]} == 5'b00101) ? 15'b010101100000101 : // 
+                      
                       15'b000000000000101;
 
 assign PCSel = control_word[14];
