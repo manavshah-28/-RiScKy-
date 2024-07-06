@@ -1,20 +1,22 @@
 # RV32I core design
 ![alt text](</getting_started/images/RiScKy banner.png>)  
 
-## Table of contents
+# Table of contents
 <!-- TOC -->
 
 - [RV32I core design](#rv32i-core-design)
-  - [Table of contents](#table-of-contents)
+- [Table of contents](#table-of-contents)
   - [Objectives](#objectives)
   - [Datapath](#datapath)
   - [Supported Instructions (RV32I base instruction set)](#supported-instructions-rv32i-base-instruction-set)
   - [Tech stack](#tech-stack)
   - [Controller Design](#controller-design)
-- [Yosys](#yosys)
-  - [Using Yosys](#using-yosys)
+  - [Iverilog](#iverilog)
+  - [Yosys](#yosys)
+    - [Using Yosys](#using-yosys)
     - [diagram created by YOSYS](#diagram-created-by-yosys)
 
+<!-- /TOC -->
 <!-- /TOC -->
 
 
@@ -55,13 +57,36 @@
 ## Controller Design
 ![alt text](</getting_started/images/controller_design.jpeg>)
 
+## Iverilog
 
-# Yosys
+* download Icarus verilog.
+``https://bleyer.org/icarus/``
+
+* to check installation, open command promt and write iverilog.
+
+![Alt text](/getting_started/images/iverilog_install_test.png)
+
+Write the verilog codes and test benches.
+
+To view the waveform on gtk wave, follow the steps below...
+
+```iverilog -o hello_tb.vvp hello_tb.v```
+
+```vvp hello_tb.vvp```
+
+VCD info: dumpfile hello_tb.vcd opened for output.
+Test complete
+
+```gtkwave```
+ 
+![Alt text](/getting_started/images/testGK.png)
+
+## Yosys
 
 * install [yosys](https://github.com/YosysHQ/yosys) 
 * windows exe of [yosys](https://github.com/YosysHQ/oss-cad-suite-build/releases/download/2024-04-08/oss-cad-suite-windows-x64-20240408.exe)
 
-## Using Yosys
+### Using Yosys
 
 * press start in windows
 * open command prompt
