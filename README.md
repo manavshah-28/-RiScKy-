@@ -1,5 +1,5 @@
 # RV32I core design
-![alt text](</getting_started/images/RiScKy banner.png>)  
+![alt text](</docs/images/RiScKy banner.png>)  
 
 ## Table of contents
 <!-- TOC -->
@@ -17,7 +17,6 @@
 
 <!-- /TOC -->
 
-
 ## Objectives
 - [x] Study RV32I Instruction Set architecture.
 - [x] Design Datapth for single Cycle RV32I processor. (verilog).
@@ -30,7 +29,7 @@
 - [ ] Achieve complete RISCV compliance.
 
 ## Datapath   
-![Alt text](</getting_started/images/-RiScKy-.jpg>)
+![Alt text](</docs/images/-RiScKy-.jpg>)
 
 ## Supported Instructions (RV32I base instruction set)
 * [x] add,sub,sll,slt,sltu,xor,srl,sra,or,and
@@ -53,7 +52,7 @@
 * Graphviz
   
 ## Controller Design
-![alt text](</getting_started/images/controller_design.jpeg>)
+![alt text](</docs/images/controller_design.jpeg>)
 
 
 # Yosys
@@ -70,15 +69,15 @@
 * This will open up OSS CAD Suite
 * ```yosys```
 * This opens yosys
-* ![alt text](/getting_started/images/yosys1.png)
+* ![alt text](/docs/images/yosys1.png)
 * Now enter the command ```read_verilog RV32I.v```
-* ![alt text](/getting_started/images/yosys2.png)
+* ![alt text](/docs/images/yosys2.png)
 * Next enter ```show RV32I```
-* ![alt text](/getting_started/images/yosys3.png)
+* ![alt text](/docs/images/yosys3.png)
 * Install [Graphviz](https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/10.0.1/windows_10_cmake_Release_graphviz-install-10.0.1-win64.exe)
 * Open another command prompt terminal and navigate to the same directory
 * Enter the command ```dot -Tpng show.dot > output.png```
 * This will make a png image of your design with the name output.png
 
 ### diagram created by YOSYS  
-![alt text](/RiScKy%20C0RE/schematic%20diagram/output.png)
+![alt text](/docs/images/yosys/output.png)
