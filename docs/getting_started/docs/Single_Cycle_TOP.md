@@ -1,6 +1,0 @@
-![Alt text](/getting_started/images/step1_single_cycle.png)
-![Alt text](/getting_started/images/step2_single_cycle.png)
-![Alt text](/getting_started/images/step3_single_cycle.png)
-![Alt text](/getting_started/images/step4_single_cycle.png)
-![Alt text](/getting_started/images/step5_single_cycle.png)
-![Alt text](/getting_started/images/step6_single_cycle.png)
