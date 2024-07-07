@@ -1,32 +1,20 @@
 # RV32I core design
 ![alt text](</docs/images/RiScKy banner.png>)  
 
-## Table of contents
 <!-- TOC -->
 
 - [RV32I core design](#rv32i-core-design)
-  - [Table of contents](#table-of-contents)
-  - [Objectives](#objectives)
   - [Datapath](#datapath)
   - [Supported Instructions (RV32I base instruction set)](#supported-instructions-rv32i-base-instruction-set)
   - [Tech stack](#tech-stack)
   - [Controller Design](#controller-design)
+  - [Objectives](#objectives)
 - [Yosys](#yosys)
   - [Using Yosys](#using-yosys)
     - [diagram created by YOSYS](#diagram-created-by-yosys)
 
 <!-- /TOC -->
-
-## Objectives
-- [x] Study RV32I Instruction Set architecture.
-- [x] Design Datapth for single Cycle RV32I processor. (verilog).
-- [x] Design Controller.
-- [x] Design GUI for interfacing with data memory, registers and instruction hex files.
-- [x] Verify individual instructions with targeted assembly tests.
-- [ ] understand verilator.
-- [ ] understand makefiles.
-- [ ] study other cores for grasping these concepts to move from verilog rtl to verification.
-- [ ] Achieve complete RISCV compliance.
+<!-- /TOC -->
 
 ## Datapath   
 ![Alt text](</docs/images/-RiScKy-.jpg>)
@@ -53,6 +41,20 @@
   
 ## Controller Design
 ![alt text](</docs/images/controller_design.jpeg>)
+
+
+## Objectives
+- [x] Study RV32I Instruction Set architecture.
+- [x] Design Datapth for single Cycle RV32I processor. (verilog).
+- [x] Design Controller.
+- [x] Design GUI for interfacing with data memory, registers and instruction hex files.
+- [x] Verify individual instructions with targeted assembly tests.
+- [ ] understand verilator.
+- [ ] understand makefiles.
+- [ ] study other cores for grasping these concepts to move from verilog rtl to verification.
+- [ ] Achieve complete RISCV compliance.
+
+
 
 
 # Yosys
