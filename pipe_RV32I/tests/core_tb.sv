@@ -25,20 +25,27 @@ rst = 0;
 #10;
 rst = 1;
 
-repeat(10)begin
+repeat(250)begin
 @(posedge clk);
 end
+fd = $fopen("final_state.txt", "w");
+    $fwrite(fd, "PC = %h\n", dut.PC_reg_F);
+    for (i = 0; i < 32; i = i + 1) begin
+        $fwrite(fd, "x%0d = %d\n", i, dut.regfile.xreg[i]);
+    end
+    $fclose(fd);
+$finish;
 end
 
 // always @(posedge clk) begin
 //     fd = $fopen("final_state.txt", "w");
-//     $fwrite(fd, "PC = %h\n", dut.PC_out);
+//     $fwrite(fd, "PC = %h\n", dut.PC_reg_F);
 //     for (i = 0; i < 32; i = i + 1) begin
 //         $fwrite(fd, "x%0d = %d\n", i, dut.regfile.xreg[i]);
 //     end
 //     $fclose(fd);
-//     if (dut.Instr == 32'h00100073) begin
-//         $display("HALT reached at PC=%0d", dut.PC_out);
+//     if (dut.INSTR_reg_M == 32'h00100073) begin
+//         $display("HALT reached at PC=%0d", dut.PC_reg_F);
 //         $finish;
 //     end
 // end

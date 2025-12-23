@@ -56,25 +56,27 @@ logic w_PC_Sel_M;
 
 logic [ILEN-1:0] w_instr_F;
 
-logic w_RegWEn;
+logic w_RegWEn; // Control
 logic [XLEN-1:0] w_mux3_out_W;
 
 logic [XLEN-1:0] w_DataA;
 logic [XLEN-1:0] w_DataB;
-logic [2:0] w_ImmSel_D;
+logic [2:0] w_ImmSel_D; // Control
 logic [XLEN-1:0] w_Immediate_D;
 
-logic w_BrUn, BrEq, BrLt;
+logic w_BrUn, BrEq, BrLt; // Control
 
 logic [XLEN-1:0] w_upper_mux_out, w_lower_mux_out;
-logic w_ASel, w_BSel;
-logic [3:0] w_ALUSel;
+logic w_ASel, w_BSel; // Control
+logic [3:0] w_ALUSel; // Control
 logic [XLEN-1:0] w_ALU_Out;
 
 logic w_MemRW_M;
 logic [XLEN-1:0] w_RData_out;
 
 logic [XLEN-1:0] w_PCP4_M;
+
+logic [1:0] w_WBSel; // Control
 // __________________________________________________________________________
 // Module Connections
 // __________________________________________________________________________
@@ -170,9 +172,34 @@ PC_adder M_stage_adder(
     .PC_in(PC_reg_E),
     .PCP4_out(w_PCP4_M)
 );
+assign w_ALU_Out_reg_E = ALU_Out_reg_E;
 
 // WRITE BACK
+mux3 last_mux(
+    .a(ALU_Out_reg_M),
+    .b(PC4_reg_M),
+    .c(Mem_reg_M),
+    .d(w_mux3_out_W), 
+    .sel(w_WBSel)
+);
 
+RV32_Controller controller(
+    .intr_F(INSTR_reg_F),
+    .intr_D(INSTR_reg_D),
+    .intr_E(INSTR_reg_E),
+    .intr_M(INSTR_reg_M),
+    .BrEq(w_BREq),
+    .BrLt(w_BRLt),
+    .PCSel(w_PC_Sel_M),
+    .ImmSel(w_ImmSel_D),
+    .BrUn(w_BrUn),
+    .ASel(w_ASel),
+    .BSel(w_BSel),
+    .ALUSel(w_ALUSel),
+    .MemRW(w_MemRW_M),
+    .RegWEn(w_RegWEn),
+    .WBSel(w_WBSel)
+);
 
 // __________________________________________________________________________
 // Sequential Logic (Always Flip Flops for registers)
@@ -237,11 +264,5 @@ INSTR_reg_M <= INSTR_reg_E;
 end
 end
 // WRITE BACK
-always @(posedge clk or negedge rst)begin
-if(!rst)begin
-end
-else begin
-end
-end
 
 endmodule
