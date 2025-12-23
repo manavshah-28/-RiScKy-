@@ -8,6 +8,6 @@
 ../src/ALU.sv
 ../src/branch_comp.sv
 ../src/Data_mem.sv
-../src/RV32I.sv
-../tests/RV32I_tb.sv
+../src/core.sv
+../tests/core_tb.sv
 

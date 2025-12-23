@@ -14,12 +14,12 @@
  Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
-module PC_adder(PC_add,PCP4_add);
+module PC_adder(PC_in,PCP4_out);
 
-input [31:0]PC_add;
+input [31:0]PC_in;
 
-output [31:0]PCP4_add;
+output [31:0]PCP4_out;
 
-assign PCP4_add = PC_add + 32'd4;
+assign PCP4_out = PC_in + 32'd4;
 
 endmodule

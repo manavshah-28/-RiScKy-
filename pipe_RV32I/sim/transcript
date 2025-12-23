@@ -1,24 +1,24 @@
 # do core.do
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:17 on Dec 22,2025
+# Start time: 06:24:16 on Dec 23,2025
 # vlog -sv -work work ../src/PC.sv 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 23:50:17 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:16 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:17 on Dec 22,2025
+# Start time: 06:24:16 on Dec 23,2025
 # vlog -sv -work work ../src/PC_adder.sv 
 # -- Compiling module PC_adder
 # 
 # Top level modules:
 # 	PC_adder
-# End time: 23:50:17 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:16 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:17 on Dec 22,2025
+# Start time: 06:24:16 on Dec 23,2025
 # vlog -sv -work work ../src/mux.sv 
 # -- Compiling module mux
 # -- Compiling module mux3
@@ -26,91 +26,92 @@
 # Top level modules:
 # 	mux
 # 	mux3
-# End time: 23:50:17 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:16 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:16 on Dec 23,2025
 # vlog -sv -work work ../src/Instruction_Memory.sv 
 # -- Compiling module Instruction_memory
 # 
 # Top level modules:
 # 	Instruction_memory
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/Regfile.sv 
 # -- Compiling module Regfile
 # 
 # Top level modules:
 # 	Regfile
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/Imm_Gen.sv 
 # -- Compiling module Imm_Gen
 # 
 # Top level modules:
 # 	Imm_Gen
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/RV32_Controller.sv 
 # -- Compiling module RV32_Controller
 # 
 # Top level modules:
 # 	RV32_Controller
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/branch_comp.sv 
 # -- Compiling module branch_comp
 # 
 # Top level modules:
 # 	branch_comp
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/ALU.sv 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:18 on Dec 22,2025
+# Start time: 06:24:17 on Dec 23,2025
 # vlog -sv -work work ../src/Data_mem.sv 
 # -- Compiling module Data_mem
 # 
 # Top level modules:
 # 	Data_mem
-# End time: 23:50:18 on Dec 22,2025, Elapsed time: 0:00:00
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:19 on Dec 22,2025
-# vlog -sv -work work ../src/RV32I.sv 
-# -- Compiling module RV32I
+# Start time: 06:24:17 on Dec 23,2025
+# vlog -sv -work work ../src/core.sv 
+# -- Compiling package core_sv_unit
+# -- Compiling module core
 # 
 # Top level modules:
-# 	RV32I
-# End time: 23:50:19 on Dec 22,2025, Elapsed time: 0:00:00
+# 	core
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 23:50:19 on Dec 22,2025
-# vlog -sv -work work ../tests/RV32I_tb.sv 
-# -- Compiling module RV32I_tb
+# Start time: 06:24:17 on Dec 23,2025
+# vlog -sv -work work ../tests/core_tb.sv 
+# -- Compiling module core_tb
 # 
 # Top level modules:
-# 	RV32I_tb
-# End time: 23:50:19 on Dec 22,2025, Elapsed time: 0:00:00
+# 	core_tb
+# End time: 06:24:17 on Dec 23,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-# vsim work.RV32I_tb 
-# Start time: 23:50:19 on Dec 22,2025
+# vsim work.core_tb 
+# Start time: 06:24:18 on Dec 23,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
 # Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
@@ -129,65 +130,9 @@
 # // and may not be used in any way not expressly authorized by SISW.
 # //
 # Loading sv_std.std
-# Loading work.RV32I_tb(fast)
+# Loading work.core_sv_unit(fast)
+# Loading work.core_tb(fast)
 # ** Warning: (vsim-PLI-3408) Too few data words read on line 11 of file "small_fibo.hex". Expected 1024, found 9.    : ../src/Instruction_Memory.sv(31)
-#    Time: 0 ns  Iteration: 0  Instance: /RV32I_tb/dut/imem
-# PC_in = x, PC_out = x
-# PC_in = 4, PC_out = 0
-# PC_in = 8, PC_out = 4
-# PC_in = 12, PC_out = 8
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 12, PC_out = 28
-# PC_in = 16, PC_out = 12
-# PC_in = 20, PC_out = 16
-# PC_in = 24, PC_out = 20
-# PC_in = 28, PC_out = 24
-# PC_in = 32, PC_out = 28
-# HALT reached at PC=32
-# ** Note: $finish    : ../tests/RV32I_tb.sv(57)
-#    Time: 545 ns  Iteration: 1  Instance: /RV32I_tb
-# End time: 23:50:20 on Dec 22,2025, Elapsed time: 0:00:01
+#    Time: 0 ns  Iteration: 0  Instance: /core_tb/dut/imem
+# End time: 06:24:19 on Dec 23,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
