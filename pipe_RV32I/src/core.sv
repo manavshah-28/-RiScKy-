@@ -64,6 +64,12 @@ logic [XLEN-1:0] w_DataB;
 logic [XLEN-1:0] w_ImmSel_D;
 logic [XLEN-1:0] w_Immediate_D;
 
+logic w_BrUn, BrEq, BrLt;
+
+logic [XLEN-1:0] w_upper_mux_out, w_lower_mux_out;
+logic w_ASel, w_BSel;
+logic [3:0] w_ALUSel;
+logic [XLEN-1:0] w_ALU_Out;
 // __________________________________________________________________________
 // Module Connections
 // __________________________________________________________________________
@@ -117,6 +123,35 @@ Imm_Gen immediate_gen(
 
 // EXECUTE
 
+branch_comp branch(
+    .A(RD1_reg_D),
+    .B(RD2_reg_D),
+    .BrUn(w_BrUn),
+    .BrEq(w_BREq),
+    .BrLt(w_BRLt)
+);
+
+mux m_upper(
+    .a(RD1_reg_D),
+    .b(PC_reg_D),
+    .c(w_upper_mux_out),
+    .sel(w_ASel)
+);
+
+mux m_lower(
+    .a(RD2_reg_D),
+    .b(IMM_reg_D),
+    .c(w_lower_mux_out),
+    .sel(w_BSel)
+);
+
+ALU alu(
+    .A(w_upper_mux_out),
+    .B(w_lower_mux_out),
+    .control(w_ALUSel),
+    .ALU_result(w_ALU_Out)
+);
+
 // MEMORY ACCESS
 
 // WRITE BACK
@@ -157,8 +192,16 @@ end
 // EXECUTE
 always @(posedge clk or negedge rst)begin
 if(!rst)begin
+PC_reg_E <= 0;
+ALU_Out_reg_E <= 0;
+RD2_reg_E <= 0;
+INSTR_reg_E <= 0;
 end
 else begin
+PC_reg_E <= PC_reg_D;
+ALU_Out_reg_E <= w_ALU_Out;
+RD2_reg_E <= RD2_reg_D;
+INSTR_reg_E <= INSTR_reg_D;
 end
 end
 // MEMORY ACCESS
