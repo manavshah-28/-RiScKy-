@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: Regfile.v
+ File: mux.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,36 +11,27 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
-module Regfile(clk,rst,WE,AddD,DataD,AddA,DataA,AddB,DataB);
-input clk,rst,WE;
-input [4:0] AddA,AddB,AddD;
-input [31:0] DataD;
-/*
-rst: is reset signal(active low).
-WE: is Write Enable signal.
-AddA,AddB : registers are read at these addresses
-and read values are given out at DataA and DataB respectively.
-AddD : is the address for the register which is to be written with DataD.
-*/
-output [31:0] DataA,DataB;
+module mux(a,b,c,sel);
 
-reg [31:0] xreg [31:0]; //x0 to x31 : RV32 registers
-reg [4:0]index = 1;
+input [31:0]a,b;
+input sel;
 
-initial begin
-    $readmemh("reg_load.hex",xreg,0,31); // custom program to load registers from gui
-end
+output [31:0]c;
 
-always @(posedge clk)begin
-   if(WE &(AddD != 5'h00))
-       xreg[AddD] <= DataD;  
-end
-
-assign DataA = (rst == 1'b0) ? 32'h00000000 : xreg[AddA];
-assign DataB = (rst == 1'b0) ? 32'h00000000 : xreg[AddB];
+assign c = (sel == 1'b1) ? b : a;
 
 endmodule
 
+module mux3(a,b,c,d,sel);
+
+input [31:0]a,b,c;
+input [1:0]sel;
+
+output [31:0]d;
+
+assign d = (sel == 2'b00) ? a : (sel == 2'b01) ? b : (sel == 2'b10) ? c : 32'h00000000;
+
+endmodule

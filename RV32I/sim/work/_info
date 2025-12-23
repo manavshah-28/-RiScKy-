@@ -1,0 +1,361 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.1 2024.02, Feb  1 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/-RiScKy-/RV32I/sim
+T_opt
+Z2 !s110 1766465419
+VN;KGjkUQlLZ4XWE:ISkRX3
+04 8 4 work RV32I_tb fast 0
+=1-2c7ba00e45d4-694a1f8b-249-6f9c
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+o-quiet -auto_acc_if_foreign -work work
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.1;79
+vALU
+2../src/ALU.sv
+Z4 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z5 !s110 1766465418
+!i10b 1
+!s100 U3DKSka=idC4RIJ8kIK0l1
+IDFW9NF>37^RLEhbWUNTLY0
+S1
+R1
+w1766457284
+8../src/ALU.sv
+F../src/ALU.sv
+!i122 8
+L0 17 41
+Z6 VDg1SIo80bB@j0V0VzS_@n1
+Z7 OL;L;2024.1;79
+r1
+!s85 0
+31
+Z8 !s108 1766465418.000000
+!s107 ../src/ALU.sv|
+!s90 -sv|-work|work|../src/ALU.sv|
+!i113 0
+Z9 o-sv -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+n@a@l@u
+vbranch_comp
+2../src/branch_comp.sv
+R4
+R5
+!i10b 1
+!s100 0_CEFBSL[6_?Gm2DE7_O73
+I4g01I5azm?d:AchOGT6Qz3
+S1
+R1
+w1766457299
+8../src/branch_comp.sv
+F../src/branch_comp.sv
+!i122 7
+L0 17 14
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/branch_comp.sv|
+!s90 -sv|-work|work|../src/branch_comp.sv|
+!i113 0
+R9
+R3
+vData_mem
+2../src/Data_mem.sv
+R4
+R5
+!i10b 1
+!s100 ZAJEPK@ISkE_KjjkRWMn]3
+ILoPccK?XPm4]V:QMGJPPk3
+S1
+R1
+w1766457318
+8../src/Data_mem.sv
+F../src/Data_mem.sv
+!i122 9
+L0 17 25
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/Data_mem.sv|
+!s90 -sv|-work|work|../src/Data_mem.sv|
+!i113 0
+R9
+R3
+n@data_mem
+vImm_Gen
+2../src/Imm_Gen.sv
+R4
+R5
+!i10b 1
+!s100 el@dZ8NH2DUegl6lPMUY53
+IdZ>l<f@SHgmGJe:Kg44k93
+S1
+R1
+w1766457333
+8../src/Imm_Gen.sv
+F../src/Imm_Gen.sv
+!i122 5
+Z10 L0 17 29
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/Imm_Gen.sv|
+!s90 -sv|-work|work|../src/Imm_Gen.sv|
+!i113 0
+R9
+R3
+n@imm_@gen
+vInstruction_memory
+2../src/Instruction_Memory.sv
+R4
+R5
+!i10b 1
+!s100 :[an[OJ^K@=HlNT74bLa?2
+I?0VhXk2:fDlRf_5?afYz61
+S1
+R1
+w1766463535
+8../src/Instruction_Memory.sv
+F../src/Instruction_Memory.sv
+!i122 3
+L0 17 32
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/Instruction_Memory.sv|
+!s90 -sv|-work|work|../src/Instruction_Memory.sv|
+!i113 0
+R9
+R3
+n@instruction_memory
+vmux
+Z11 2../src/mux.sv
+R4
+Z12 !s110 1766465417
+!i10b 1
+!s100 b=jb;8QiQj9oA]U8A8R4F3
+Ia`hmgONSGSiPG<IH[Sl[90
+S1
+R1
+Z13 w1766457363
+Z14 8../src/mux.sv
+Z15 F../src/mux.sv
+!i122 2
+L0 17 10
+R6
+R7
+r1
+!s85 0
+31
+Z16 !s108 1766465417.000000
+Z17 !s107 ../src/mux.sv|
+Z18 !s90 -sv|-work|work|../src/mux.sv|
+!i113 0
+R9
+R3
+vmux3
+R11
+R4
+R12
+!i10b 1
+!s100 GgMLbjSG=Ij^kEeKQ@NCV2
+IMXZ`We6KfR?8D20c8L^1I3
+S1
+R1
+R13
+R14
+R15
+!i122 2
+L0 28 10
+R6
+R7
+r1
+!s85 0
+31
+R16
+R17
+R18
+!i113 0
+R9
+R3
+vPC
+2../src/PC.sv
+R4
+R12
+!i10b 1
+!s100 35Z4S`CRahJ_Lmcj8e^^]3
+Inz_CV7?llO8W8P<B[PHMZ0
+S1
+R1
+w1766457396
+8../src/PC.sv
+F../src/PC.sv
+!i122 0
+L0 17 19
+R6
+R7
+r1
+!s85 0
+31
+R16
+!s107 ../src/PC.sv|
+!s90 -sv|-work|work|../src/PC.sv|
+!i113 0
+R9
+R3
+n@p@c
+vPC_adder
+2../src/PC_adder.sv
+R4
+R12
+!i10b 1
+!s100 >ozH?KKajB7KbdOGAfnf50
+Ia0B;6P<WBXY?JU[mFfDdC3
+S1
+R1
+w1766457374
+8../src/PC_adder.sv
+F../src/PC_adder.sv
+!i122 1
+L0 17 9
+R6
+R7
+r1
+!s85 0
+31
+R16
+!s107 ../src/PC_adder.sv|
+!s90 -sv|-work|work|../src/PC_adder.sv|
+!i113 0
+R9
+R3
+n@p@c_adder
+vRegfile
+2../src/Regfile.sv
+R4
+R5
+!i10b 1
+!s100 jKc5<[Rb4zEK5m@XK6C3m1
+IcYZk:Rg`GYh_>f6XI0I5L1
+S1
+R1
+w1766457415
+8../src/Regfile.sv
+F../src/Regfile.sv
+!i122 4
+R10
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/Regfile.sv|
+!s90 -sv|-work|work|../src/Regfile.sv|
+!i113 0
+R9
+R3
+n@regfile
+vRV32_Controller
+2../src/RV32_Controller.sv
+R4
+R5
+!i10b 1
+!s100 ZLK[0Da0c0^8fDkN2nBEh1
+ISi6ZDhbTTGQm22KMhb]I?3
+S1
+R1
+w1766457452
+8../src/RV32_Controller.sv
+F../src/RV32_Controller.sv
+!i122 6
+L0 17 81
+R6
+R7
+r1
+!s85 0
+31
+R8
+!s107 ../src/RV32_Controller.sv|
+!s90 -sv|-work|work|../src/RV32_Controller.sv|
+!i113 0
+R9
+R3
+n@r@v32_@controller
+vRV32I
+2../src/RV32I.sv
+R4
+R2
+!i10b 1
+!s100 FJmkcMI]`XRnLJJ;97j_A1
+Id=WB4TN5AbCl7ZKQaM_nH2
+S1
+R1
+w1766458044
+8../src/RV32I.sv
+F../src/RV32I.sv
+!i122 10
+L0 28 127
+R6
+R7
+r1
+!s85 0
+31
+Z19 !s108 1766465419.000000
+!s107 ../src/RV32I.sv|
+!s90 -sv|-work|work|../src/RV32I.sv|
+!i113 0
+R9
+R3
+n@r@v32@i
+vRV32I_tb
+2../tests/RV32I_tb.sv
+R4
+R2
+!i10b 1
+!s100 d[dcf79C2494ez7Eb]5Pa1
+IBgbfeTD@kH2F5R1764eFA3
+S1
+R1
+w1766465324
+8../tests/RV32I_tb.sv
+F../tests/RV32I_tb.sv
+!i122 11
+L0 1 61
+R6
+R7
+r1
+!s85 0
+31
+R19
+!s107 ../tests/RV32I_tb.sv|
+!s90 -sv|-work|work|../tests/RV32I_tb.sv|
+!i113 0
+R9
+R3
+n@r@v32@i_tb

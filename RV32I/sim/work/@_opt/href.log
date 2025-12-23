@@ -1,0 +1,7 @@
+BEGIN 1:Regfile:fast:work
+    xreg :  1:RV32I_tb:fast:work
+END 
+BEGIN 1:RV32I:fast:work
+    PC_out :  1:RV32I_tb:fast:work
+    Instr :  1:RV32I_tb:fast:work
+END 

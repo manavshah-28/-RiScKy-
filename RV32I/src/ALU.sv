@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: ALU.v
+ File: ALU.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,7 +11,7 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
 module ALU(A,B,control,ALU_result);
@@ -24,7 +24,7 @@ input [3:0]control;
 output [31:0]ALU_result;
 
 //wires
-wire [31:0]alu_slt;
+logic [31:0]alu_slt;
 
 assign alu_slt = (A < B) ? 32'h00000001: 32'h00000000;
 //assign ALU_result = (control == 1'b0) ? (A + B) : ( A - B);

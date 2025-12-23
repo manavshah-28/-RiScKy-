@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: RV32_Controller.v
+ File: RV32_Controller.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,7 +11,7 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
 module RV32_Controller(i_instuction, BrEq, BrLt,
@@ -21,7 +21,7 @@ input [31:0] i_instuction;
 input BrEq,BrLt;
 
 // wire reduced instruction.
-wire [10:0]red_inst;
+logic [10:0]red_inst;
 assign red_inst = {i_instuction[30],i_instuction[14:12],i_instuction[6:2],BrEq,BrLt};
 
 // all control signals.
@@ -34,7 +34,7 @@ output MemRW;
 output RegWEn;
 output [1:0]WBSel;
 
-wire [14:0]control_word;
+logic [14:0]control_word;
 assign control_word = (red_inst[10:2] == 9'b000001100) ? 15'b000000000000101 :  // add
                       (red_inst[10:2] == 9'b100001100) ? 15'b000000000010101 :  // sub
                       (red_inst[9:2]  ==  8'b00101100) ? 15'b000000000100101 :  // sll

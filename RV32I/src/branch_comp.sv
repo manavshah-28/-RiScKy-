@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: RV32_tb.v
+ File: branch_comp.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,39 +11,20 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
-`include "RV32I.v"
+module branch_comp(A,B,BrUn,BrEq,BrLt);
 
-module RV32_tb();
+input [31:0]A,B;
+input BrUn;
 
-reg clk=0,rst;
+output BrEq,BrLt;
 
-//module instantiation
-RV32I DUT(.clk(clk),
-             .rst(rst));
+assign BrEq = ((BrUn == 1'b0) & (A == B)) ? 1 :
+              ((BrUn == 1'b1) & (A[30:0] == B[30:0])) ? 1 : 0;
+ 
+assign BrLt = ((BrUn == 1'b0) & (A < B)) ? 1 :
+              ((BrUn == 1'b1) & (A[30:0] < B[30:0])) ? 1 : 0; 
 
-// clocking
-always begin
-    clk = ~clk;
-    #50;
-end
-
-initial begin
-    $dumpfile("RV32_tb.vcd");
-    $dumpvars(0,RV32_tb);
-end
-
-initial begin
-
-    // give a reset signal (active low)
-    rst = 1'b0;
-    #150;
-
-    rst = 1'b1;
-    #3000;
-    $display("End Of Test");
-    $finish;
-end
 endmodule

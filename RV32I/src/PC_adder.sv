@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: Instruction_Memory.v
+ File: PC_adder.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,29 +11,15 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
-module Instruction_memory(rst,A,RD);
+module PC_adder(PC_add,PCP4_add);
 
-input rst;
-input [31:0]A;
+input [31:0]PC_add;
 
-output [31:0]RD;
+output [31:0]PCP4_add;
 
-reg [31:0]mem[1023:0];
-
-assign RD = (rst == 1'b0) ? {32{1'b0}} : mem[A[31:2]];
-
-initial begin
-    $readmemh("instructions.hex",mem, 0,1023);
-end
-
-//test purposes
-/*initial begin
-mem[0]=32'h002082B3;
-mem[4]=32'h005182B3;
-mem[8]=32'h005202B3;
-end*/
+assign PCP4_add = PC_add + 32'd4;
 
 endmodule

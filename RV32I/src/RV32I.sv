@@ -1,5 +1,5 @@
 /*/////////////////////////////////////////////
- File: RV32I.v
+ File: RV32I.sv
  Author: Manav Shah
  ----------------------------------------------
 
@@ -11,60 +11,68 @@
     ╚═╝  ╚═╝╚═╝╚══════╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   
  ----------------------------------------------
                                     
- Copyright (c) 2024 MANAV SHAH
+ Copyright (c) 2025 MANAV SHAH
 *//////////////////////////////////////////////
 
-`include "PC.v"
-`include "PC_adder.v"
-`include "mux.v"
-`include "Regfile.v"
-`include "Instruction_Memory.v"
-`include "ALU.v"
-`include "Imm_Gen.v"
-`include "branch_comp.v"
-`include "Data_mem.v"
-`include "RV32_Controller.v"
+// `include "PC.v"
+// `include "PC_adder.v"
+// `include "mux.v"
+// `include "Regfile.v"
+// `include "Instruction_Memory.v"
+// `include "ALU.v"
+// `include "Imm_Gen.v"
+// `include "branch_comp.v"
+// `include "Data_mem.v"
+// `include "RV32_Controller.v"
 
 module RV32I(clk,rst);
 
 input clk,rst;
 
 //wires
-wire [31:0]PC_out;
-wire [31:0]PC_in;
+logic [31:0]PC_out;
+logic [31:0]PC_in;
 
-wire [31:0]PC_4;
+logic [31:0]PC_4;
 
-wire [31:0]alu;
+logic [31:0]alu;
 
-wire [31:0]reg_DataA;
-wire [31:0]reg_DataB;
+logic [31:0]reg_DataA;
+logic [31:0]reg_DataB;
 
-wire [31:0]immediate;
+logic [31:0]immediate;
 
-wire [31:0]alu_in1;
-wire [31:0]alu_in2;
+logic [31:0]alu_in1;
+logic [31:0]alu_in2;
 
 
-wire [31:0]DataR; // Data memory output
+logic [31:0]DataR; // Data memory output
 
-wire [31:0]wb;
+logic [31:0]wb;
 
 // Instruction
-wire [31:0]Instr;
+logic [31:0]Instr;
 
 // control signal wires
-wire PCSel;
-wire RegWEn;
-wire ASel;
-wire BSel;
-wire [3:0]ALUSel;
-wire [2:0]ImmSel;
-wire BrUn;
-wire MemRW;
-wire [1:0]WBSel;
+logic PCSel;
+logic RegWEn;
+logic ASel;
+logic BSel;
+logic [3:0]ALUSel;
+logic [2:0]ImmSel;
+logic BrUn;
+logic MemRW;
+logic [1:0]WBSel;
 
-wire BrEq,BrLt;
+logic BrEq,BrLt;
+
+// monitor for debug
+initial begin
+    forever begin
+@(posedge clk);
+$display("PC_in = %0d, PC_out = %0d",PC_in, PC_out);
+end
+end
 
 mux muxPC(.a(PC_4),
           .b(alu),
