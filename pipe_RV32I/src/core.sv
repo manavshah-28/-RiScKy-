@@ -61,7 +61,7 @@ logic [XLEN-1:0] w_mux3_out_W;
 
 logic [XLEN-1:0] w_DataA;
 logic [XLEN-1:0] w_DataB;
-logic [XLEN-1:0] w_ImmSel_D;
+logic [2:0] w_ImmSel_D;
 logic [XLEN-1:0] w_Immediate_D;
 
 logic w_BrUn, BrEq, BrLt;
@@ -70,6 +70,11 @@ logic [XLEN-1:0] w_upper_mux_out, w_lower_mux_out;
 logic w_ASel, w_BSel;
 logic [3:0] w_ALUSel;
 logic [XLEN-1:0] w_ALU_Out;
+
+logic w_MemRW_M;
+logic [XLEN-1:0] w_RData_out;
+
+logic [XLEN-1:0] w_PCP4_M;
 // __________________________________________________________________________
 // Module Connections
 // __________________________________________________________________________
@@ -153,6 +158,18 @@ ALU alu(
 );
 
 // MEMORY ACCESS
+Data_mem dmem(
+    .clk(clk),
+    .A_mem(ALU_Out_reg_E),
+    .DataIP(RD2_reg_E),
+    .MemRW(w_MemRW_M),
+    .D_read(w_RData_out)
+);
+
+PC_adder M_stage_adder(
+    .PC_in(PC_reg_E),
+    .PCP4_out(w_PCP4_M)
+);
 
 // WRITE BACK
 
@@ -207,8 +224,16 @@ end
 // MEMORY ACCESS
 always @(posedge clk or negedge rst)begin
 if(!rst)begin
+ALU_Out_reg_M <= 0;
+PC4_reg_M <= 0;
+Mem_reg_M <= 0;
+INSTR_reg_M <= 0;
 end
 else begin
+ALU_Out_reg_M <= ALU_Out_reg_E;
+PC4_reg_M <= w_PCP4_M;
+Mem_reg_M <= w_RData_out;
+INSTR_reg_M <= INSTR_reg_E;
 end
 end
 // WRITE BACK
