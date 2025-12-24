@@ -28,7 +28,7 @@ logic [31:0]mem[1023:0];
 assign RD = (rst == 1'b0) ? {32{1'b0}} : mem[A[31:2]];
 
 initial begin
-    $readmemh("small_fibo.hex",mem, 0,1023);
+    $readmemh("hex/load_store.hex",mem, 0,1023);
     // Count until first uninitialized word
     for (int i = 0; i < 1024; i++) begin
         if (mem[i] !== 32'hx)

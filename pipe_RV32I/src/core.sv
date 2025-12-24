@@ -176,9 +176,9 @@ assign w_ALU_Out_reg_E = ALU_Out_reg_E;
 
 // WRITE BACK
 mux3 last_mux(
-    .a(ALU_Out_reg_M),
-    .b(PC4_reg_M),
-    .c(Mem_reg_M),
+    .b(ALU_Out_reg_M),
+    .c(PC4_reg_M),
+    .a(Mem_reg_M),
     .d(w_mux3_out_W), 
     .sel(w_WBSel)
 );
