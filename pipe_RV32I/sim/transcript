@@ -1,24 +1,24 @@
 # do core.do
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/PC.sv 
 # -- Compiling module PC
 # 
 # Top level modules:
 # 	PC
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/PC_adder.sv 
 # -- Compiling module PC_adder
 # 
 # Top level modules:
 # 	PC_adder
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/mux.sv 
 # -- Compiling module mux
 # -- Compiling module mux3
@@ -26,92 +26,92 @@
 # Top level modules:
 # 	mux
 # 	mux3
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/Instruction_Memory.sv 
 # -- Compiling module Instruction_memory
 # 
 # Top level modules:
 # 	Instruction_memory
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/Regfile.sv 
 # -- Compiling module Regfile
 # 
 # Top level modules:
 # 	Regfile
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/Imm_Gen.sv 
 # -- Compiling module Imm_Gen
 # 
 # Top level modules:
 # 	Imm_Gen
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:31 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:31 on Dec 24,2025
 # vlog -sv -work work ../src/RV32_Controller.sv 
 # -- Compiling module RV32_Controller
 # 
 # Top level modules:
 # 	RV32_Controller
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:27 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # vlog -sv -work work ../src/branch_comp.sv 
 # -- Compiling module branch_comp
 # 
 # Top level modules:
 # 	branch_comp
-# End time: 01:21:27 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:28 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # vlog -sv -work work ../src/ALU.sv 
 # -- Compiling module ALU
 # 
 # Top level modules:
 # 	ALU
-# End time: 01:21:28 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:28 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # vlog -sv -work work ../src/Data_mem.sv 
 # -- Compiling module Data_mem
 # 
 # Top level modules:
 # 	Data_mem
-# End time: 01:21:28 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:28 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # vlog -sv -work work ../src/core.sv 
 # -- Compiling package core_sv_unit
 # -- Compiling module core
 # 
 # Top level modules:
 # 	core
-# End time: 01:21:28 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # QuestaSim-64 vlog 2024.1 Compiler 2024.02 Feb  1 2024
-# Start time: 01:21:28 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # vlog -sv -work work ../tests/core_tb.sv 
 # -- Compiling module core_tb
 # 
 # Top level modules:
 # 	core_tb
-# End time: 01:21:28 on Dec 24,2025, Elapsed time: 0:00:00
+# End time: 23:38:32 on Dec 24,2025, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim work.core_tb 
-# Start time: 01:21:28 on Dec 24,2025
+# Start time: 23:38:32 on Dec 24,2025
 # ** Note: (vsim-3812) Design is being optimized...
 # Support of the MGLS_LICENSE_FILE and LM_LICENSE_FILE licensing environment variables will be discontinued starting with the 2025.1 release. Please update to using the SALT_LICENSE_SERVER variable.
 # Please contact Siemens EDA Customer Support (https://support.sw.siemens.com/) for assistance.
@@ -132,11 +132,11 @@
 # Loading sv_std.std
 # Loading work.core_sv_unit(fast)
 # Loading work.core_tb(fast)
-# ** Warning: (vsim-PLI-3408) Too few data words read on line 3 of file "hex/load_store.hex". Expected 1024, found 2.    : ../src/Instruction_Memory.sv(31)
+# ** Warning: (vsim-PLI-3408) Too few data words read on line 14 of file "hex/load_store.hex". Expected 1024, found 13.    : ../src/Instruction_Memory.sv(31)
 #    Time: 0 ns  Iteration: 0  Instance: /core_tb/dut/imem
-# HALT detected at PC = 00000004
+# HALT detected at PC = 00000030
 # Final state dumped. Stopping simulation.
 # ** Note: $finish    : ../tests/core_tb.sv(69)
-#    Time: 95 ns  Iteration: 1  Instance: /core_tb
-# End time: 01:21:30 on Dec 24,2025, Elapsed time: 0:00:02
+#    Time: 205 ns  Iteration: 1  Instance: /core_tb
+# End time: 23:38:34 on Dec 24,2025, Elapsed time: 0:00:02
 # Errors: 0, Warnings: 1
