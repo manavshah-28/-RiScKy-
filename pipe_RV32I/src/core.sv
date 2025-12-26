@@ -67,7 +67,8 @@ logic [XLEN-1:0] w_Immediate_D;
 logic w_BrUn, BrEq, BrLt; // Control
 
 logic [XLEN-1:0] w_upper_mux_out, w_lower_mux_out;
-logic w_ASel, w_BSel; // Control
+logic [1:0] w_ASel; // made into 2 bit signal post the addition of forwarding unit
+logic w_BSel; // Control
 logic [3:0] w_ALUSel; // Control
 logic [XLEN-1:0] w_ALU_Out;
 
@@ -77,6 +78,9 @@ logic [XLEN-1:0] w_RData_out;
 logic [XLEN-1:0] w_PCP4_M;
 
 logic [1:0] w_WBSel; // Control
+
+// Forwarding wire 
+logic [XLEN-1:0] forwarding;
 // __________________________________________________________________________
 // Module Connections
 // __________________________________________________________________________
@@ -138,12 +142,16 @@ branch_comp branch(
     .BrLt(w_BRLt)
 );
 
-mux m_upper(
-    .a(RD1_reg_D),
-    .b(PC_reg_D),
-    .c(w_upper_mux_out),
+// this will now become a 3:1 mux to support fowarding
+// ASel will also become a 2 bit signal to support this, and changes will need to be made in the controller as well. 
+
+mux3 m_upper(
+    .a(forwarding),
+    .b(RD1_reg_D),
+    .c(PC_reg_D),
+    .d(w_upper_mux_out),
     .sel(w_ASel)
-);
+); // connections altered. 
 
 mux m_lower(
     .a(RD2_reg_D),

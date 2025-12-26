@@ -31,7 +31,8 @@ assign red_inst_M = {intr_M[30],intr_M[14:12],intr_M[6:2],BrEq,BrLt};
 output PCSel;
 output [2:0]ImmSel;
 output BrUn;
-output ASel,BSel;
+output [1:0] ASel; // made into a 2 bit signal to support forwarding unit
+output BSel;
 output [3:0]ALUSel;
 output MemRW;
 output RegWEn;
@@ -237,7 +238,7 @@ assign control_word_M = (red_inst_M[10:2] == 9'b000001100) ? 15'b000000000000101
 assign PCSel = control_word_E[14];
 assign ImmSel = control_word_F[13:11];
 assign BrUn = control_word_D[10];
-assign ASel = control_word_D[9];
+assign ASel = control_word_D[9]; // is now a 2 bit signal, entire controller logic will have to modified accordingly
 assign BSel = control_word_D[8];
 assign ALUSel = control_word_D[7:4];
 assign MemRW = control_word_E[3];
